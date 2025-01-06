@@ -245,135 +245,6 @@ footer>div>div>p{
     overflow-x: hidden;
 }
 
-#bienvenue {
-    height: 900px;
-    margin-top: -100px;
-    padding-top: 200px;
-    background-image: url(../media/background/pexels-milodeckertxXL.png);
-    background-size: cover;
-    background-position: right;
-    width: 100%;
-    padding-bottom: 20px;
-    filter: drop-shadow(2px 4px 4px #492E34);
-    
-}
-
-#logoAnim{
-    
-    height: 400px;
-}
-
-#mascotte {
-    position: absolute;
-    z-index: 4;
-    width: 12%;
-    top: 142px;
-    left: 23%;
-    overflow: hidden;
-    animation: logoShake 20s ease-out 0s infinite normal forwards;
-}
-
-#forme1{
-    position: absolute;
-    z-index: 4;
-    width: 5%;
-    top: 150px;
-    right: 32%;
-    overflow: hidden;
-}
-
-#mega {
-    position: absolute;
-    z-index: 4;
-    width: 8%;
-    left: 18%;
-    top: 460px;
-    overflow: hidden;
-    animation: logoShake 10s ease-out 0s infinite normal forwards;
-}
-
-#cassette {
-    position: absolute;
-    z-index: 4;
-    width: 8%;
-    top: 95px;
-    right: 15%;
-    rotate: -30deg;
-    overflow: hidden;
-    animation: logoShake 10s ease-out 0s infinite normal forwards;
-    
-}
-
-#etoile {
-    position: absolute;
-    z-index: 4;
-    width: 5%;
-    top: 580px;
-    left: 28%;
-    overflow: hidden;
-    animation: logoRotation 20s linear 0s infinite normal forwards;
-}
-
-#fleur1 {
-    position: absolute;
-    z-index: 4;
-    width: 10%;
-    top: 230px;
-    right: 17%;
-    overflow: hidden;
-    animation: logoRotation  25s linear 0s infinite normal forwards;
-}
-
-#fleur2 {
-    position: absolute;
-    z-index: 4;
-    width: 7%;
-    top: 600px;
-    right: 25%;
-    overflow: hidden;
-    animation: logoRotation  30s linear 0s infinite normal forwards;
-}
-
-#tartelette{
-    position: absolute;
-    z-index: 2;
-    width: 35%;
-    overflow: hidden;
-    animation: logoRotation  35s linear 0s infinite normal forwards;
-
-}
-
-#ns_2024{
-    position: absolute;
-    z-index: 3;
-    width: 28%;
-    animation: beats 0.6s ease-out 0s infinite normal forwards;
-
-}
-
-#btnlanding {
-    font-family: "Caprasimo", serif;
-    font-weight: 400;
-    font-size: 25px;
-    z-index: 2;
-    border: solid 2px;
-    border-color: #492E34;
-    margin-top: 200px;
-    width: 25%;
-    padding: 1%;
-    margin-left: 38%;
-    filter: drop-shadow(2px 4px 4px #492E34);
-}
-
-#fleurbtn {
-    position: absolute;
-    z-index: 3;
-    width: 100px;
-    margin-left: 60%;
-    margin-top: 25%;
-    overflow: hidden;
-    animation: logoShake 12s ease-out 0s infinite normal forwards;
-}
 
 /*ACCUEIL AFFICHE*/
 #affiche{
@@ -447,7 +318,7 @@ footer>div>div>p{
 .pass1, .pass2, .pass3 {
     position: relative;
     z-index: 3;
-    background-image: url(../media/background/tartelette_accueil.png);
+    background-image: url(../../../public/media/background/tartelette_accueil.png);
     background-position: center;
     background-size: contain;
     background-repeat: no-repeat; 
