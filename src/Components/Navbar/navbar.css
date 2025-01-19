@@ -18,7 +18,7 @@
     filter: drop-shadow(2px 2px 2px #492E34);
 }
 
-#navbar-burger{
+#navbar-burger, #navbar-login{
     position: relative;
     cursor: pointer;
     filter: drop-shadow(2px 4px 4px #492E34);
@@ -36,7 +36,17 @@
 	}
 }
 
-.navbar-links {
+@keyframes loginSlide {
+	0% {
+		transform: translateX(400px);
+	}
+
+	100% {
+		transform: translateX(0);
+	}
+}
+
+.navbar-links{
     display: none;
     justify-content: center;
     position: fixed;
@@ -49,7 +59,45 @@
     z-index: 6;    
 }
 
+.navbar-login{
+    display: none;
+    flex-direction: column;
+    align-items: center;
+    position: fixed;
+    background-color:#c4cb99 ;
+    filter: drop-shadow(2px 4px 4px #492E34);
+    color: beige;
+    width: 20%;
+    height: 100%;
+    right: 0;
+    padding: 120px 2%;
+    animation: loginSlide 1s ease 0s 1 normal forwards;
+    z-index: 6; 
+}
+
+.navbar-login>ul{
+    width: 100%;
+}
+
+.navbar-login>ul>li{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+}
+
+.loginbtn {
+    width: 100%;
+    padding: 10% 80%;
+    margin: 10%;
+}
+
 .show-nav.navbar-links{
+    display: flex;
+}
+
+.show-login.navbar-login {
     display: flex;
 }
 
@@ -57,7 +105,7 @@
     animation: menuSlide 2s ease 0s 1 reverse;
 }
 
-.navbar-links>ul{
+.navbar-links>ul, .navbar-login>ul{
     display: flex;
     flex-direction: column;
     padding-top: 5%;

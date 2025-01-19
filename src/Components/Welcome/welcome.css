@@ -72,8 +72,6 @@
 /*CONTAINER*/
 
 #welcome {
-    height: 900px;
-    /*margin-top: -100px;*/
     padding-top: 200px;
     background-image: url(../../../public/media/background/pexels-milodeckertxXL.png);
     background-size: cover;

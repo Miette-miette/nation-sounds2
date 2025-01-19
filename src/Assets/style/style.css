@@ -6,9 +6,8 @@ body{
     width: 100vw;
 }
 
-main{
+main, #main{
     padding: 5% 20%;
-    background-image: url(../media/background/fondhead.png);
     background-position: top;
     background-repeat: no-repeat;
     background-size: contain;
@@ -179,7 +178,7 @@ button:hover, .button-style:hover{
 /*FOOTER*/
 
 footer {
-    background-image: url(../media/background/footerBackground.png);
+    background-image: url(../../../public/media/background/footerBackground.png);
     background-position: top;
     background-repeat: no-repeat;
     background-size: cover;
@@ -298,65 +297,6 @@ footer>div>div>p{
     font-size: 34px;
     display: flex;
     justify-content: left;
-}
-
-/*ACCUEIL BILLETERIE*/
-
-#billeterie {
-    width: 100%;
-    padding: 2% 0 4%;
-    background-image: url(../media/background/pexels-wendywei-1805895.png); 
-    background-position: top;
-    background-repeat: no-repeat;
-    background-size: cover;
-}
-
-#billeterie>div>h2 , #billeterie>p {
-    color: beige;
-}
-
-.pass1, .pass2, .pass3 {
-    position: relative;
-    z-index: 3;
-    background-image: url(../../../public/media/background/tartelette_accueil.png);
-    background-position: center;
-    background-size: contain;
-    background-repeat: no-repeat; 
-    justify-content: center;
-    align-items: center;
-    margin: 2% 2%;
-    filter: drop-shadow(2px 4px 4px #3f2128);
-}
-
-.pass3{
-    width: 350px;
-    height: 350px;
-}
-
-.pass2,.pass1{
-    width: 270px;
-    height: 270px;
-}
-
-.pass3>h3{
-    font-family: "Caprasimo", serif;
-    font-size: 30px;
-}
-.pass3>p{
-    font-size: 40px;
-    font-weight: bold;
-    color: #E47161;
-}
-
-.pass1>h3, .pass2>h3{
-    font-family: "Caprasimo", serif;
-    font-size: 24px;
-}
-
-.pass1>p, .pass2>p{
-    font-size: 30px;
-    color: #E47161;
-    font-weight: bold;
 }
 
 /*ACCUEIL ARTICLE ACTU*/
@@ -574,9 +514,11 @@ footer>div>div>p{
 .faqTopic{
     padding: 2% 0;
 }
+
 .reponse{
     display: none;
 }
+
 .conteneurQuestion {
     background-color: beige;
     padding: 10px 25px 10px 25px;
