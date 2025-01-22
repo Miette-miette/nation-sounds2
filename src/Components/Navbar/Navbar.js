@@ -65,19 +65,19 @@ function Navbar() {
       
         <ul>
           <li>
-            <Link to="/programmation" className="links">
+            <Link to="/programmation" className="links" onClick={handleShowMenu}>
               <img src='../../media/doodle/etoile.png' alt="Etoile" id="logo"/>
               <p>PROGRAMMATION</p>
             </Link>
           </li>
           <li>
-            <Link to="/concerts" className="links">
+            <Link to="/concerts" className="links" onClick={handleShowMenu}>
               <img src='../../media/doodle/cassette.png' alt="cassette audio"/>
               <p>CONCERTS</p>
             </Link>
           </li>
           <li >
-            <Link to='https://www.ticketmaster.fr/fr' target="_blank" rel="noreferrer" className="links">
+            <Link to='https://www.ticketmaster.fr/fr' target="_blank" rel="noreferrer" className="links" onClick={handleShowMenu}>
               <img src='../../media/doodle/happyfleur2.png' alt="fleur" />
               <p>BILLETERIE</p>
               <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" className="bi bi-box-arrow-up-right" viewBox="0 0 16 16"/>
@@ -86,31 +86,31 @@ function Navbar() {
             </Link>            
           </li>
           <li>
-            <Link to='/carte' className="links">
+            <Link to='/carte' className="links" onClick={handleShowMenu}>
               <img src='../../media/doodle/forme-organique1.png' alt="forme organique"/>
               <p>CARTE</p>
             </Link>
           </li>
           <li>
-            <Link to='/reseaux-sociaux' className="links">
+            <Link to='/reseaux-sociaux' className="links" onClick={handleShowMenu}>
               <img src='../../media/doodle/megaphone.png' alt="mégaphone"/>
               <p>RESEAUX SOCIAUX</p>
             </Link>
           </li>
           <li>
-            <Link to='/partenaires' className="links">
+            <Link to='/partenaires' className="links" onClick={handleShowMenu}>
               <img src='../../media/doodle/metal.png' alt="main qui fait le symbole métal "/>
               <p>PARTENAIRE</p>
             </Link>
           </li> 
           <li>
-            <Link to='https://127.0.0.1:8000/index.php/contact' className="links">
+            <Link to='https://127.0.0.1:8000/index.php/contact' className="links" onClick={handleShowMenu}>
               <img src='../../media/doodle/metal.png' alt="main qui fait le symbole métal "/>
               <p>CONTACT</p>
             </Link>
           </li>
           <li>
-            <Link to='/FAQ' className="links">
+            <Link to='/FAQ' className="links" onClick={handleShowMenu}>
               <img src='../../media/doodle/forme-organique4.png' alt="forme organique"/>
               <p>FAQ</p>
             </Link>

@@ -1,3 +1,25 @@
+@keyframes slideOut {
+	0% {
+		opacity: 0;
+		transform: translateX(-250px);
+	}
+
+    20% {
+		opacity: 1;
+		transform: translateX(0);
+	}
+
+    80% {
+		opacity: 1;
+		transform: translateX(0);
+	}
+    
+	100% {
+		opacity: 0;
+		transform: translateX(250px);
+	}
+}
+
 #alert {
     position: absolute;
     z-index: 1;
@@ -8,11 +30,13 @@
     height: 180px;
     padding-bottom: 80px;
     background: linear-gradient(180deg, rgb(255, 247, 219) 25%, rgba(0,212,255,0) 100%);
+   
 }
 
 #alert>div {
     display: flex;
-    flex-direction: row;
+    flex-direction: row; 
+    animation: slideOut 10s ease 5s infinite normal forwards;
 }
 
 #alert>div>h3, #alert>div>p{

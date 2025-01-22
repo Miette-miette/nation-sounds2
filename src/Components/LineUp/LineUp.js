@@ -24,11 +24,12 @@ const LineUp = () => {
                 <div id="conteneurCarousel" className="d-flex flex-row" /*data-aos="fade-left" data-aos-duration="1000"*/>
                 {
                     concert.map((concert)=>
+                       
                         <div className="carouselCard" style={{backgroundImage: `url(${concert.imageName})`}}>
                             <div class="infoCard">
                                 <h3 class="title">{concert.titre}</h3>
-                                <p class="scene">%scene%</p>
-                                <p class="date">{concert.beginDateTime}</p>
+                                <p class="scene">{concert.Location.name}</p>
+                                <p class="date">{concert.beginDatetime}</p>
                             </div>
                         </div>
                     )

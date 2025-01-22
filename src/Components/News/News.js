@@ -22,7 +22,7 @@ const News = () => {
                     data.map((article)=>
                         <div className="articleCard d-flex flex-column" id={article.id} key={article.id}>
                             <div className="articleImg">
-                                <img src={article.img}/>
+                                <img src={`${article.image}`}/>
                             </div>
                             <div className="articleDescription">
                                 <h3 className="title">{article.title}</h3>

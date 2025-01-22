@@ -7,7 +7,7 @@ body{
 }
 
 main, #main{
-    padding: 5% 20%;
+    padding: 7% 20%;
     background-position: top;
     background-repeat: no-repeat;
     background-size: contain;
@@ -519,6 +519,14 @@ footer>div>div>p{
     display: none;
 }
 
+.reponse.hide{
+    display: none;
+}
+
+.reponse.show-reponse{
+    display: flex;
+}
+
 .conteneurQuestion {
     background-color: beige;
     padding: 10px 25px 10px 25px;
@@ -603,15 +611,18 @@ footer>div>div>p{
 
 /*CARTE*/
 
-#map {
+#map{
 
-    min-height: 400px;
     width: 60%;
     position: relative;
     z-index: 1;
     border-style: solid;
     border-color: #492E34;
     margin: 1%;
+}
+
+#map>div {
+    min-height: 400px;
 }
 
 #conteneurInformations{
