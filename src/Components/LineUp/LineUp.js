@@ -4,8 +4,11 @@ import axios from "axios";
 const LineUp = () => {
     const [concert, setConcert]= useState([])
 
+    const baseUrl = 'http://127.0.0.1:8000'; // sans le slash final
+    const endpoint = '/api/event';
+
     useEffect(() => {
-        axios.get("https://127.0.0.1:8000/index.php/api/concerts")
+        axios.get(baseUrl + endpoint)
         .then((res)=>setConcert(res.data))
     },[])
     console.log(concert);
@@ -25,11 +28,11 @@ const LineUp = () => {
                 {
                     concert.map((concert)=>
                        
-                        <div className="carouselCard" style={{backgroundImage: `url(${concert.imageName})`}}>
+                        <div className="carouselCard" style={{backgroundImage: `url(${concert.artist.imageFile})`}}>
                             <div class="infoCard">
-                                <h3 class="title">{concert.titre}</h3>
-                                <p class="scene">{concert.Location.name}</p>
-                                <p class="date">{concert.beginDatetime}</p>
+                                <h3 class="title">{concert.artist.name}</h3>
+                                <p class="scene">{concert.location.name}</p>
+                                <p class="date">{concert.date}</p>
                             </div>
                         </div>
                     )

@@ -13,15 +13,14 @@ const Programmation = () =>{
         "Resonance":"../../media/scene/resonance.png",
     }
     
+
+    const baseUrl = 'http://127.0.0.1:8000'; // sans le slash final
+    const endpoint = '/api/event';
+
     useEffect(() => {
-        axios.get("https://127.0.0.1:8000/index.php/api/programmation")
-        .then((res) => setProgrammation(res.data))
+        axios.get(baseUrl + endpoint)
+        .then((res)=>setProgrammation(res.data))
     },[])
-
-
-    const performance= programmation[0];
-    const concert= programmation[1];
-    const atelier= programmation[2];
 
     //FILTRES
 
@@ -41,10 +40,10 @@ const Programmation = () =>{
     console.log(filters);
 
     const filteredProg = programmation.filter((prog) => {
-        prog.map((prog)=>{
+        programmation.map((prog)=>{
 
             //ce bloc fonctionne! plus qu'a setup les heures et les types d'event (nouvelle column dans les tables? )
-            if((filters.jour == 'Tous' || prog.beginDatetime.includes(filters.jour)) && (filters.lieu == 'Tous' || prog.Location.name.includes(filters.lieu))){
+            if((filters.jour == 'Tous' || prog.date.includes(filters.jour)) && (filters.lieu == 'Tous' || prog.location.name.includes(filters.lieu))){
               return console.log(prog);
                
             }
@@ -53,6 +52,9 @@ const Programmation = () =>{
         
         })
     });
+
+    console.log(filteredProg);
+    
 
 
     return(
@@ -127,16 +129,16 @@ const Programmation = () =>{
                     filteredProg.map((prog)=> { console.log(filteredProg);
                     
                      
-                            <div className="progItem d-flex flex-column" id="%id%" style={{backgroundImage: `url(${prog.titre})`}}>
+                            <div className="progItem d-flex flex-column" id="%id%" style={{backgroundImage: `url(${prog.artist.name})`}}>
                                 <div className="conteneurImg d-flex flex-row justify-content-end align-items-start">
                                     <img className="iconScene d-flex justify-content-end align-items-end" src="%iconS%"/>
                                 </div>
                                 
                                 <div className="progTxt">
-                                    <h3 className="title">{prog.titre}</h3>
-                                    <p className="scene">Lieu: <strong>{prog.Location.name}</strong></p>
-                                    <p className="date"><strong>{prog.beginDatetime}</strong></p>
-                                    <p className="heure">{prog.beginDatetime}</p>
+                                    <h3 className="title">{prog.artist.name}</h3>
+                                    <p className="scene">Lieu: <strong>{prog.location.name}</strong></p>
+                                    <p className="date"><strong>{prog.date}</strong></p>
+                                    <p className="heure">{prog.begin_time}</p>
                                 </div>                    
                             </div>
                         })  

@@ -4,8 +4,11 @@ import axios from "axios";
 const News = () => {
     const [data, setData]= useState([])
 
+    const baseUrl = 'http://127.0.0.1:8000'; 
+    const endpoint = '/api/news';
+
     useEffect(() => {
-        axios.get("https://127.0.0.1:8000/index.php/api/articles")
+        axios.get(baseUrl + endpoint)
         .then((res)=>setData(res.data))
     },[])
     console.log(data);
@@ -22,11 +25,11 @@ const News = () => {
                     data.map((article)=>
                         <div className="articleCard d-flex flex-column" id={article.id} key={article.id}>
                             <div className="articleImg">
-                                <img src={`${article.image}`}/>
+                                <img src={`${article.img}`}/>
                             </div>
                             <div className="articleDescription">
                                 <h3 className="title">{article.title}</h3>
-                                <p className="chapeau">{article.chapeau}</p>
+                                <p className="chapeau">{article.summary}</p>
                             </div>
                         </div> 
                     )

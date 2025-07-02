@@ -5,8 +5,11 @@ import './alert.css';
 const Alert = () =>{
     const [alertes, setAlertes]= useState([])
 
+    const baseUrl = 'http://127.0.0.1:8000'; 
+    const endpoint = '/api/alert';
+
     useEffect(() => {
-        axios.get("https://127.0.0.1:8000/index.php/api/alerts")
+        axios.get(baseUrl + endpoint)
         .then((res)=>setAlertes(res.data))
     },[])
     

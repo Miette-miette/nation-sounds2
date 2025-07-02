@@ -6,10 +6,14 @@ const Carte = () =>{
     const [carte, setCarte]= useState([])
     //const [marker, setMarkers]= useState([])
 
+    const baseUrl = 'http://127.0.0.1:8000'; // sans le slash final
+    const endpoint = '/api/map';
+
     useEffect(() => {
-        axios.get("https://127.0.0.1:8000/index.php/api/carte")
+        axios.get(baseUrl + endpoint)
         .then((res)=>setCarte(res.data))
     },[])
+
 
     console.log(carte);
 
@@ -27,15 +31,14 @@ const Carte = () =>{
                 <div id="map">
                     {
                         carte.map((carte)=>
-                            carte.map((setup)=>
                          
-                    <MapContainer center={[setup.lat, setup.lng]} zoom={13} scrollWheelZoom={false}>
+                    <MapContainer center={[carte.lat, carte.lng]} zoom={13} scrollWheelZoom={false}>
                         <TileLayer
                             attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
                             url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
                         />
                     </MapContainer>
-                   ))}
+                   )}
                 </div>
             
                 <div id="conteneurInformations">

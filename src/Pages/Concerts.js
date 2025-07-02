@@ -3,12 +3,16 @@ import axios from "axios";
 
 const Concerts = () =>{
     
-    const [concerts, setConcerts]= useState([])
+    const [concerts, setConcert]= useState([])
+
+    const baseUrl = 'http://127.0.0.1:8000'; // sans le slash final
+    const endpoint = '/api/event';
 
     useEffect(() => {
-        axios.get("https://127.0.0.1:8000/index.php/api/concerts")
-        .then((res)=>setConcerts(res.data))
+        axios.get(baseUrl + endpoint)
+        .then((res)=>setConcert(res.data))
     },[])
+
 
     // SETUP DES BOUTONS
     const btn= [
@@ -64,16 +68,16 @@ const Concerts = () =>{
                     {concerts
                         .map((euphorie)=> 
                         {
-                            const location = euphorie.Location.name
-                            if(euphorie.beginDatetime.includes(selectedBtn) && location.includes("Euphorie"))
+                            const location = euphorie.location.name
+                            if(euphorie.date.includes(selectedBtn) && location.includes("Euphorie"))
                             {
                                 return (
-                                    <div className="concertItem" key={euphorie.titre}>
+                                    <div className="concertItem" key={euphorie.artist.name}>
                                         <img className="src" src={euphorie.imageName} width="100px" height="100px"/>
                                         <div>
-                                            <h3 className="title d-flex justify-content-start" >{euphorie.titre}</h3>
-                                            <p className="date">{euphorie.beginDatetime}</p>
-                                            <p className="heure">{euphorie.beginDatetime}</p>
+                                            <h3 className="title d-flex justify-content-start" >{euphorie.artist.name}</h3>
+                                            <p className="date">{euphorie.date}</p>
+                                            <p className="heure">{euphorie.begin_time}</p>
                                         </div>
                                     </div>
                                 )
@@ -93,16 +97,16 @@ const Concerts = () =>{
                     {concerts
                         .map((fusion)=> 
                         {
-                            const location = fusion.Location.name
-                            if(fusion.beginDatetime.includes(selectedBtn) && location.includes("Fusion"))
+                            const location = fusion.location.name
+                            if(fusion.date.includes(selectedBtn) && location.includes("Fusion"))
                             {
                                 return (
-                                    <div className="concertItem" key={fusion.titre}>
+                                    <div className="concertItem" key={fusion.artist.name}>
                                         <img className="src" src={fusion.imageName} width="100px" height="100px"/>
                                         <div>
-                                            <h3 className="title d-flex justify-content-start" >{fusion.titre}</h3>
-                                            <p className="date">{fusion.beginDatetime}</p>
-                                            <p className="heure">{fusion.beginDatetime}</p>
+                                            <h3 className="title d-flex justify-content-start" >{fusion.artist.name}</h3>
+                                            <p className="date">{fusion.date}</p>
+                                            <p className="heure">{fusion.begin_time}</p>
                                         </div>
                                     </div>
                                 )
@@ -122,16 +126,16 @@ const Concerts = () =>{
                     {concerts
                         .map((reverie)=> 
                         {
-                            const location = reverie.Location.name
-                            if(reverie.beginDatetime.includes(selectedBtn) && location.includes("Reverie"))
+                            const location = reverie.location.name
+                            if(reverie.date.includes(selectedBtn) && location.includes("Reverie"))
                             {
                                 return (
-                                    <div className="concertItem" key={reverie.titre}>
+                                    <div className="concertItem" key={reverie.artist.name}>
                                         <img className="src" src={reverie.imageName} width="100px" height="100px"/>
                                         <div>
-                                            <h3 className="title d-flex justify-content-start" >{reverie.titre}</h3>
-                                            <p className="date">{reverie.beginDatetime}</p>
-                                            <p className="heure">{reverie.beginDatetime}</p>
+                                            <h3 className="title d-flex justify-content-start" >{reverie.artist.name}</h3>
+                                            <p className="date">{reverie.date}</p>
+                                            <p className="heure">{reverie.begin_time}</p>
                                         </div>
                                     </div>
                                 )
@@ -151,16 +155,16 @@ const Concerts = () =>{
                     {concerts
                         .map((resonance)=> 
                         {
-                            const location = resonance.Location.name
-                            if(resonance.beginDatetime.includes(selectedBtn) && location.includes("Resonnance"))
+                            const location = resonance.location.name
+                            if(resonance.date.includes(selectedBtn) && location.includes("Resonnance"))
                             {
                                 return (
-                                    <div className="concertItem" key={resonance.titre}>
+                                    <div className="concertItem" key={resonance.artist.name}>
                                         <img className="src" src={resonance.imageName} width="100px" height="100px"/>
                                         <div>
-                                            <h3 className="title d-flex justify-content-start" >{resonance.titre}</h3>
-                                            <p className="date">{resonance.beginDatetime}</p>
-                                            <p className="heure">{resonance.beginDatetime}</p>
+                                            <h3 className="title d-flex justify-content-start" >{resonance.artist.name}</h3>
+                                            <p className="date">{resonance.date}</p>
+                                            <p className="heure">{resonance.begin_time}</p>
                                         </div>
                                     </div>
                                 )
@@ -181,16 +185,16 @@ const Concerts = () =>{
                     {concerts
                         .map((prisme)=> 
                         {
-                            const location = prisme.Location.name
-                            if(prisme.beginDatetime.includes(selectedBtn) && location.includes("Prisme"))
+                            const location = prisme.location.name
+                            if(prisme.date.includes(selectedBtn) && location.includes("Prisme"))
                             {
                                 return (
-                                    <div className="concertItem" key={prisme.titre}>
+                                    <div className="concertItem" key={prisme.artist.name}>
                                         <img className="src" src={prisme.imageName} width="100px" height="100px"/>
                                         <div>
-                                            <h3 className="title d-flex justify-content-start" >{prisme.titre}</h3>
-                                            <p className="date">{prisme.beginDatetime}</p>
-                                            <p className="heure">{prisme.beginDatetime}</p>
+                                            <h3 className="title d-flex justify-content-start" >{prisme.artist.name}</h3>
+                                            <p className="date">{prisme.date}</p>
+                                            <p className="heure">{prisme.begin_time}</p>
                                         </div>
                                     </div>
                                 )
