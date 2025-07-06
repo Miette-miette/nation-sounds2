@@ -45,12 +45,12 @@ function Navbar() {
         <h2>Mon espace Nation-Sounds</h2>
         <ul /*if a faire si connecté ou déco*/>
           <li>
-            <Link to="https://127.0.0.1:8000/index.php/connexion">
+            <Link to="http://127.0.0.1:8000/connexion">
               <button className="loginbtn">Se connecter</button>
             </Link>
           </li>
           <li>
-            <Link to="https://127.0.0.1:8000/index.php/inscription">
+            <Link to="http://127.0.0.1:8000/inscription">
               <button className="loginbtn">S'inscrire</button>
             </Link>
           </li>

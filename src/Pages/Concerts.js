@@ -5,7 +5,7 @@ const Concerts = () =>{
     
     const [concerts, setConcert]= useState([])
 
-    const baseUrl = 'http://127.0.0.1:8000'; // sans le slash final
+    const baseUrl = 'http://127.0.0.1:8000'; 
     const endpoint = '/api/event';
 
     useEffect(() => {
@@ -73,7 +73,7 @@ const Concerts = () =>{
                             {
                                 return (
                                     <div className="concertItem" key={euphorie.artist.name}>
-                                        <img className="src" src={euphorie.imageName} width="100px" height="100px"/>
+                                        <img className="src" src={`http://127.0.0.1:8000${euphorie.artist.imgUrl}`} width="100px" height="100px"/>
                                         <div>
                                             <h3 className="title d-flex justify-content-start" >{euphorie.artist.name}</h3>
                                             <p className="date">{euphorie.date}</p>

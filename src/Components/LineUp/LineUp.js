@@ -28,7 +28,7 @@ const LineUp = () => {
                 {
                     concert.map((concert)=>
                        
-                        <div className="carouselCard" style={{backgroundImage: `url(${concert.artist.imageFile})`}}>
+                        <div className="carouselCard" style={{backgroundImage: `url(http://127.0.0.1:8000${concert.artist.imgUrl})`}}>
                             <div class="infoCard">
                                 <h3 class="title">{concert.artist.name}</h3>
                                 <p class="scene">{concert.location.name}</p>

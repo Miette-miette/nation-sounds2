@@ -2,12 +2,18 @@ import React, { useEffect, useState } from "react";
 import axios from "axios";
 
 const Partenaire = () =>{
-    const [partenaire, setPartenaire]= useState([])
+    const [partenaire, setPartenaire]= useState([]);
+
+    const baseUrl = 'http://127.0.0.1:8000'; 
+    const endpoint = '/api/partner';
 
     useEffect(() => {
-        axios.get("https://127.0.0.1:8000/index.php/api/partenaires")
+        axios.get(baseUrl + endpoint)
         .then((res)=>setPartenaire(res.data))
-    },[])
+    },[]);
+    console.log(partenaire);
+    
+
     
     return(
         <main>
@@ -22,12 +28,12 @@ const Partenaire = () =>{
                 <div id="institutionConteneur" className="d-flex flex-column">
                 {
                     partenaire
-                        .filter((partenaire)=> partenaire.type === "institution")
+                        .filter((partenaire)=> partenaire.type === "Institution")
                         .map((partenaire)=>
                         <div className="imgPartenaireConteneur  d-flex flex-column flex-lg-row justify-content-center justify-content-md-between align-items-center ">
-                            <img src={partenaire.imageName}/>
+                            <img src={`http://127.0.0.1:8000${partenaire.imgUrl}`}/>
                             <div className="articleDescription d-flex flex-column justify-content-center">
-                                <h2 className="title">{partenaire.titre}</h2>
+                                <h2 className="title">{partenaire.name}</h2>
                                 <p className="description">{partenaire.content}</p>
                             </div>
                         </div>                       
@@ -41,12 +47,12 @@ const Partenaire = () =>{
                 <div id="entrepriseConteneur" class="d-flex flex-column">
                 {
                     partenaire
-                    .filter((partenaire)=> partenaire.type === "entreprise")
+                    .filter((partenaire)=> partenaire.type === "Entreprise")
                     .map((partenaire)=>
                         <div className="imgPartenaireConteneur  d-flex flex-column flex-lg-row justify-content-center justify-content-md-between align-items-center ">
                             <img src={partenaire.imageName}/>
                             <div className="articleDescription d-flex flex-column justify-content-center">
-                                <h2 className="title">{partenaire.titre}</h2>
+                                <h2 className="title">{partenaire.name}</h2>
                                 <p className="description">{partenaire.content}</p>
                             </div>
                         </div>                       
