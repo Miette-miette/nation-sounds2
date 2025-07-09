@@ -16,7 +16,7 @@ function welcome(){
         </div>
 
         <div className="button-style" id="btnlanding">
-            <a href="/">Découvrez le programme</a>
+            <a href="/programmation">Découvrez le programme</a>
         </div>
         <img src="../media/doodle/happyfleur2.png" id="fleurbtn"/>
     </section> 

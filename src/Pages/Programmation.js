@@ -1,5 +1,6 @@
 import React, { useEffect, useState,  createContext, useMemo} from "react";
 import axios from "axios";
+import { formatDate, formatTime } from "../utils/date";
 
 const FilterContext = createContext();
 
@@ -18,7 +19,6 @@ const Programmation = () =>{
         "Resonance":"../../media/scene/resonance.png",
     }
     
-
     const baseUrl = 'http://127.0.0.1:8000'; 
     const endpoint = '/api/event';
 
@@ -154,49 +154,46 @@ const Programmation = () =>{
                 </div>
 
                 {/* FILTRES DIVERS */}
-                <div
-                id="filtreAutre"
-                className="d-flex flex-column justify-content-center align-items-center"
-                >
-                <div className="filtreConteneur flex-column">
-                    <label htmlFor="lieu">Lieu</label>
-                    <select
-                    id="lieu"
-                    name="lieu"
-                    className="button-style"
-                    onChange={handleFilterChange}
-                    value={filters.lieu}
-                    >
-                    <option value="Tous">Tous</option>
-                    <option value="Euphorie">Scène Euphorie</option>
-                    <option value="Fusion">Scène Fusion</option>
-                    <option value="Reverie">Scène Reverie</option>
-                    <option value="Resonance">Scène Resonance</option>
-                    <option value="Prisme">Scène Prisme</option>
-                    <option value="Le Patio">Le Patio</option>
-                    </select>
-                </div>
-                <div className="filtreConteneur flex-column">
-                    <label htmlFor="type">Type d'évènement</label>
-                    <select
-                    id="type"
-                    name="type"
-                    className="button-style"
-                    onChange={handleFilterChange}
-                    value={filters.type}
-                    >
-                    <option value="Tous">Tous</option>
-                    <option value="concert">Concert</option>
-                    <option value="performance">Performance</option>
-                    <option value="atelier">Atelier</option>
-                    </select>
-                </div>
+                <div id="filtreAutre" className="d-flex flex-column justify-content-center align-items-center">
+                    <div className="filtreConteneur flex-column">
+                        <label htmlFor="lieu">Lieu</label>
+                        <select
+                        id="lieu"
+                        name="lieu"
+                        className="button-style"
+                        onChange={handleFilterChange}
+                        value={filters.lieu}
+                        >
+                        <option value="Tous">Tous</option>
+                        <option value="Euphorie">Scène Euphorie</option>
+                        <option value="Fusion">Scène Fusion</option>
+                        <option value="Reverie">Scène Reverie</option>
+                        <option value="Resonance">Scène Resonance</option>
+                        <option value="Prisme">Scène Prisme</option>
+                        <option value="Le Patio">Le Patio</option>
+                        </select>
+                    </div>
+
+                    <div className="filtreConteneur flex-column">
+                        <label htmlFor="type">Type d'évènement</label>
+                        <select
+                        id="type"
+                        name="type"
+                        className="button-style"
+                        onChange={handleFilterChange}
+                        value={filters.type}
+                        >
+                        <option value="Tous">Tous</option>
+                        <option value="concert">Concert</option>
+                        <option value="performance">Performance</option>
+                        <option value="atelier">Atelier</option>
+                        </select>
+                    </div>
                 </div>
             </div>
             </div>
         </div>
 
-        {/* Liste des événements filtrés */}
         <FilterContext.Provider value={{ filters, handleFilterChange }}>
             <div
             id="progConteneur"
@@ -211,31 +208,27 @@ const Programmation = () =>{
                 <div
                     key={prog.id}
                     className="progItem d-flex flex-column"
-                    style={{backgroundImage: `url(http://127.0.0.1:8000${prog.artist.imgUrl})`}}>
+                    style={{backgroundImage: `url(${baseUrl}${prog.artist.imgUrl})`}}>
                     <div className="conteneurImg d-flex flex-row justify-content-end align-items-start">
-                    <img
-                        className="iconScene d-flex justify-content-end align-items-end"
-                        src={sceneIcon}
-                        alt="icon scène"
-                    />
+                        <img className="iconScene d-flex justify-content-end align-items-end" src={sceneIcon} alt="icon scène"/>
                     </div>
 
                     <div className="progTxt">
-                    <h3 className="title">{prog.artist?.name}</h3>
-                    <p className="scene">
-                        Lieu: <strong>{sceneName}</strong>
-                    </p>
-                    <p className="date">
-                        <strong>{prog.date}</strong>
-                    </p>
-                    <p className="heure">{prog.begin_time}</p>
+                        <h3 className="title">{prog.artist.name}</h3>
+                        <p className="scene">
+                            Lieu: <strong>{sceneName}</strong>
+                        </p>
+                        <p className="date">
+                            <strong>{formatDate(prog.date)}</strong>
+                        </p>
+                        <p className="heure">{formatTime(prog.begin_time)}</p>
                     </div>
                 </div>
                 );
             })}
             </div>
         </FilterContext.Provider>
-        </main>
+    </main>
     )
 }
 export default Programmation;

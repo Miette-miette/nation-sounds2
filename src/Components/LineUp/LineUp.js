@@ -1,10 +1,11 @@
 import React, { useEffect, useState } from "react";
 import axios from "axios";
+import { formatDate, formatTime } from "../../utils/date";
 
 const LineUp = () => {
     const [concert, setConcert]= useState([])
 
-    const baseUrl = 'http://127.0.0.1:8000'; // sans le slash final
+    const baseUrl = 'http://127.0.0.1:8000'; 
     const endpoint = '/api/event';
 
     useEffect(() => {
@@ -28,11 +29,11 @@ const LineUp = () => {
                 {
                     concert.map((concert)=>
                        
-                        <div className="carouselCard" style={{backgroundImage: `url(http://127.0.0.1:8000${concert.artist.imgUrl})`}}>
+                        <div className="carouselCard" style={{backgroundImage: `url(${baseUrl}${concert.artist.imgUrl})`}}>
                             <div class="infoCard">
                                 <h3 class="title">{concert.artist.name}</h3>
                                 <p class="scene">{concert.location.name}</p>
-                                <p class="date">{concert.date}</p>
+                                <p class="date">{formatDate(concert.date)}</p>
                             </div>
                         </div>
                     )

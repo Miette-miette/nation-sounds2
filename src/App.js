@@ -13,6 +13,7 @@ import Footer from './Components/Footer/Footer';
 
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 import './Assets/style/style.css';
+import HeaderBg from './Components/HeaderBg/HeaderBg';
 
 function App() {
   return (
@@ -21,6 +22,7 @@ function App() {
         <header className="App-header">
           <Alert/>
           <Navbar />
+          <HeaderBg/>
         </header>
         <div className="content">
             <Routes>

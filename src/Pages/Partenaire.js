@@ -29,12 +29,12 @@ const Partenaire = () =>{
                 {
                     partenaire
                         .filter((partenaire)=> partenaire.type === "Institution")
-                        .map((partenaire)=>
+                        .map((i)=>
                         <div className="imgPartenaireConteneur  d-flex flex-column flex-lg-row justify-content-center justify-content-md-between align-items-center ">
-                            <img src={`http://127.0.0.1:8000${partenaire.imgUrl}`}/>
+                            <img src={`${baseUrl}${i.imgUrl}`}/>
                             <div className="articleDescription d-flex flex-column justify-content-center">
-                                <h2 className="title">{partenaire.name}</h2>
-                                <p className="description">{partenaire.content}</p>
+                                <h2 className="title">{i.name}</h2>
+                                <p className="description">{i.content}</p>
                             </div>
                         </div>                       
                     )   
@@ -48,12 +48,12 @@ const Partenaire = () =>{
                 {
                     partenaire
                     .filter((partenaire)=> partenaire.type === "Entreprise")
-                    .map((partenaire)=>
+                    .map((e)=>
                         <div className="imgPartenaireConteneur  d-flex flex-column flex-lg-row justify-content-center justify-content-md-between align-items-center ">
-                            <img src={partenaire.imageName}/>
+                            <img src={`${baseUrl}${e.imgUrl}`}/>
                             <div className="articleDescription d-flex flex-column justify-content-center">
-                                <h2 className="title">{partenaire.name}</h2>
-                                <p className="description">{partenaire.content}</p>
+                                <h2 className="title">{e.name}</h2>
+                                <p className="description">{e.content}</p>
                             </div>
                         </div>                       
                     )   
