@@ -1,0 +1,9 @@
+.artist-info>div>img{
+    border-radius: 50%;
+    object-fit: cover;
+}
+
+.artist-info>div>h1{
+    filter: drop-shadow(3px 3px 0px #E47161);
+    font-size: 3rem;
+}

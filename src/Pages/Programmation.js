@@ -1,4 +1,5 @@
 import React, { useEffect, useState,  createContext, useMemo} from "react";
+import { Link } from 'react-router-dom';
 import axios from "axios";
 import { formatDate, formatTime } from "../utils/date";
 
@@ -205,7 +206,7 @@ const Programmation = () =>{
                 const sceneName = prog.location.name || "";
                 const sceneIcon = iconScene[sceneName] || "";
                 return (
-                <div
+                <Link to={`/artiste/${prog.artist.id}`}
                     key={prog.id}
                     className="progItem d-flex flex-column"
                     style={{backgroundImage: `url(${baseUrl}${prog.artist.imgUrl})`}}>
@@ -223,7 +224,7 @@ const Programmation = () =>{
                         </p>
                         <p className="heure">{formatTime(prog.begin_time)}</p>
                     </div>
-                </div>
+                </Link>
                 );
             })}
             </div>

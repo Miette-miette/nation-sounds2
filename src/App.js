@@ -14,6 +14,7 @@ import Footer from './Components/Footer/Footer';
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 import './Assets/style/style.css';
 import HeaderBg from './Components/HeaderBg/HeaderBg';
+import PageArtist from './Components/PageArtist/PageArtist';
 
 function App() {
   return (
@@ -34,7 +35,8 @@ function App() {
               <Route exact path='/reseaux-sociaux' element={<ReseauxSociaux />}/>
               <Route exact path='/mentions-legales' element={<MentionsLegales />}/>
               <Route exact path='/faq' element={<FAQ />}/>
-              <Route path='*' element={<Home />}/>     
+              <Route path='*' element={<Home />}/>   
+              <Route path='/artiste/:id' element={<PageArtist />}/>
             </Routes>
         </div>
       </div>

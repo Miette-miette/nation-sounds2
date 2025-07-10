@@ -4,6 +4,7 @@ import { MapContainer, Popup, TileLayer, useMapEvents, Marker, LayersControl, La
 import L from 'leaflet';
 import 'leaflet/dist/leaflet.css';
 import LocationMarker from "../Components/GeoLocation/LocationMarker";
+import { formatTime } from "../utils/date";
 
 function createIcon(url) {
   return new L.Icon({
@@ -55,8 +56,8 @@ const Carte = () =>{
                             url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
                         />
                         
-                        <LocationMarker active={geoActive} />
-                        
+                        <LocationMarker position="bottomright" active={geoActive} />
+                       
                         <LayersControl position="topright">
 
                             <LayersControl.Overlay checked name="Tous"> 
@@ -128,37 +129,42 @@ const Carte = () =>{
                         </LayersControl>
                     </MapContainer>
                    )}
-                   <button className="btn btn-outline-dark m-2" onClick={() => setGeoActive(true)}>
-                        📍 Me localiser
-                    </button>
+                   
                 </div>
-            
-                <div id="conteneurInformations">
-                    {!selectedMarker ? (
-                        <p><em>Touchez la carte pour obtenir plus d'informations sur chaque lieu!</em></p>) : (
-                            <div className="mapInfo d-flex flex-column">
-                                <div className="carteInfoImg">
-                                    <img src={`${baseUrl}${selectedMarker.infoLocation.imgUrl}`} alt={selectedMarker.name} />
+
+                <div className="aside-map d-flex flex-column">
+                        <button className="button-style h5 p-3" onClick={() => setGeoActive(true)}>
+                            📍 Me localiser
+                        </button>
+
+                        <div id="conteneurInformations">
+                            {!selectedMarker ? (
+                                <p><em>Touchez la carte pour obtenir plus d'informations sur chaque lieu!</em></p>) : (
+                                    <div className="mapInfo d-flex flex-column">
+                                        <div className="carteInfoImg">
+                                            <img src={`${baseUrl}${selectedMarker.infoLocation.imgUrl}`} alt={selectedMarker.name} />
+                                        </div>
+
+                                    <div className="carteTxt d-flex flex-column justify-content-around align-items-center">
+                                        <h2>{selectedMarker.name}</h2>
+
+                                        {selectedMarker.type === "scène" && (
+                                        <p>{selectedMarker.eventNow ? "🎵 Un événement est en cours !" 
+                                        : "Pas d’événement pour l’instant."}</p>)}
+
+                                        {selectedMarker.type === "restauration" && (
+                                        <div>
+                                            <p>{selectedMarker.infoLocation.description}</p>
+                                            <h3 className="h4">Horaires d'ouverture</h3>
+                                            <p>{formatTime(selectedMarker.infoLocation.opening)} / {formatTime(selectedMarker.infoLocation.closing)}</p>
+                                        </div>
+                                        )}
+                                    </div>
                                 </div>
-
-                            <div className="carteTxt d-flex flex-column justify-content-around align-items-center">
-                                <h2>{selectedMarker.name}</h2>
-
-                                {selectedMarker.type === "scène" && (
-                                <p>{selectedMarker.eventNow ? "🎵 Un événement est en cours !" 
-                                : "Pas d’événement pour l’instant."}</p>)}
-
-                                {selectedMarker.type === "restauration" && (
-                                <div>
-                                    <p>{selectedMarker.description}</p>
-                                    <h3>Horaires</h3>
-                                    <p>{selectedMarker.opening}</p>
-                                </div>
-                                )}
-                            </div>
-                        </div>
-                    )}
-            </div>
+                            )}
+                    </div>
+                </div>
+                
 
 
             </div>
