@@ -1,4 +1,5 @@
 import React, { useEffect, useState, useMemo } from "react";
+import { Link } from "react-router-dom";
 import axios from "axios";
 import { formatTime } from "../utils/date";
 
@@ -38,13 +39,13 @@ const SceneSection = ({ scene, concerts }) => {
       </div>
 
       {concerts.map((c) => (
-        <div className="concertItem" key={`${c.artist.name}-${c.begin_time}`}>
+        <Link to={`/artiste/${c.artist.id}`} className="concertItem" key={`${c.artist.name}-${c.begin_time}`}>
           <img className="src" src={`${baseUrl}${c.artist.imgUrl}`}width="100" height="100" alt={c.artist.name}/>
           <div>
             <h3 className="title d-flex justify-content-start">{c.artist.name}</h3>
             <p className="heure">{formatTime(c.begin_time)} / {formatTime(c.end_time)}</p>
           </div>
-        </div>
+        </Link>
       ))}
     </article>
   );

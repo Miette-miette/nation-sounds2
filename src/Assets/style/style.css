@@ -538,6 +538,14 @@ footer>div>div>p{
     display: flex;
 }
 
+.voirPlus {
+  transition: transform 0.3s ease;
+}
+
+.voirPlus.rotated {
+  transform: rotate(180deg); 
+}
+
 .conteneurQuestion {
     background-color: beige;
     padding: 10px 25px 10px 25px;

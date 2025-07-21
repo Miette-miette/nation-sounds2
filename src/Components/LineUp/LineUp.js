@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from "react";
+import { Link } from "react-router-dom";
 import axios from "axios";
 import { formatDate, formatTime } from "../../utils/date";
 
@@ -29,13 +30,13 @@ const LineUp = () => {
                 {
                     concert.map((concert)=>
                        
-                        <div className="carouselCard" style={{backgroundImage: `url(${baseUrl}${concert.artist.imgUrl})`}}>
+                        <Link to={`/artiste/${concert.artist.id}`} className="carouselCard" style={{backgroundImage: `url(${baseUrl}${concert.artist.imgUrl})`}}>
                             <div class="infoCard">
                                 <h3 class="title">{concert.artist.name}</h3>
                                 <p class="scene">{concert.location.name}</p>
                                 <p class="date">{formatDate(concert.date)}</p>
                             </div>
-                        </div>
+                        </Link>
                     )
                 }   
                 </div>                       

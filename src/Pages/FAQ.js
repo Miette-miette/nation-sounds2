@@ -41,56 +41,47 @@ function FAQ() {
         },
     ]
 
-    const [showReponse, setShowReponse] = useState(false);
-    
-    const handleShowReponse = () =>{
-        setShowReponse(!showReponse)
+    const [openQuestionId, setOpenQuestionId] = useState(null);
+
+    const handleShowReponse = (id) => {
+        setOpenQuestionId(prevId => (prevId === id ? null : id));
     };
-    
+
+    const renderQuestion = (item) => (
+        <div className="conteneurQuestion" key={item.id} onClick={() => handleShowReponse(item.id)}>
+            <div className="question d-flex flex-row justify-content-between align-items-center">
+                <h3>{item.question}</h3>
+                <img
+                src="../media/icon/suivant.png"
+                alt="flèche d'interaction"
+                className={`voirPlus d-flex ${openQuestionId === item.id ? "rotated" : ""}`}
+                />
+            </div>
+            <p className={`reponse ${openQuestionId === item.id ? "show-reponse" : "hide"}`}>
+                {item.reponse}
+            </p>
+        </div>
+    );
+
     return (
         <section id="main">
             <div className="d-flex flex-row justify-content-center align-items-center">
-                <img src="../media/doodle/forme-organique2.png" className="decoTitre"/>
+                <img src="../media/doodle/forme-organique2.png" className="decoTitre" />
                 <h1 className="d-flex justify-content-center">Foire aux questions</h1>
-                <img src="../media/doodle/forme-organique2.png" className="decoTitre"/>
+                <img src="../media/doodle/forme-organique2.png" className="decoTitre" />
             </div>
 
             <h2 className="faqTopic">Billets</h2>
-
             <article id="faqBillet">
-            {
-                faqBillet.map((billet)=>
-                <div className="conteneurQuestion" id={billet.id} onClick={handleShowReponse}>
-                    <div className="question d-flex flex-row justify-content-between align-items-center" >
-                        <h3>{billet.question}</h3>
-                        <img src="../media/icon/suivant.png"  alt="fleche d'interaction"  className="voirPlus d-flex"/>
-                    </div>
-                        
-                    <p className={`reponse ${showReponse ? "show-reponse" : "hide"}`}>{billet.reponse}</p>
-                </div>
-                )
-            }      
+                {faqBillet.map(renderQuestion)}
             </article>
 
             <h2 className="faqTopic">Accessibilité</h2>
-
-            <article id="faqAcces" >
-            {
-                faqAccessibilite.map((access)=>
-                <div className="conteneurQuestion" id={access.id} onClick={handleShowReponse}>
-                    <div className="question d-flex flex-row justify-content-between align-items-center" >
-                        <h3>{access.question}</h3>
-                        <img src="../media/icon/suivant.png"  alt="fleche d'interaction"  className="voirPlus d-flex"/>
-                    </div>
-                        
-                    <p className={`reponse ${showReponse ? "show-reponse" : "hide"}`}>{access.reponse}</p>
-                </div>
-                )
-            }      
+            <article id="faqAcces">
+                {faqAccessibilite.map(renderQuestion)}
             </article>
         </section>
     );
-
 }
- 
+
 export default FAQ;
