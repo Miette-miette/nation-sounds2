@@ -147,6 +147,7 @@ const Carte = () =>{
 
                                     <div className="carteTxt d-flex flex-column justify-content-around align-items-center">
                                         <h2>{selectedMarker.name}</h2>
+                                        <p>{selectedMarker.infoLocation.description}</p>
 
                                         {selectedMarker.type === "scène" && (
                                         <p>{selectedMarker.eventNow ? "🎵 Un événement est en cours !" 
@@ -154,7 +155,6 @@ const Carte = () =>{
 
                                         {selectedMarker.type === "restauration" && (
                                         <div>
-                                            <p>{selectedMarker.infoLocation.description}</p>
                                             <h3 className="h4">Horaires d'ouverture</h3>
                                             <p>{formatTime(selectedMarker.infoLocation.opening)} / {formatTime(selectedMarker.infoLocation.closing)}</p>
                                         </div>

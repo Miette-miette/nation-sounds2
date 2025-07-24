@@ -15,6 +15,7 @@ import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 import './Assets/style/style.css';
 import HeaderBg from './Components/HeaderBg/HeaderBg';
 import PageArtist from './Components/PageArtist/PageArtist';
+import PageNews from './Components/PagesNews/PageNews';
 
 function App() {
   return (
@@ -37,6 +38,7 @@ function App() {
               <Route exact path='/faq' element={<FAQ />}/>
               <Route path='*' element={<Home />}/>   
               <Route path='/artiste/:id' element={<PageArtist />}/>
+              <Route path='/news/:id' element={<PageNews />}/>
             </Routes>
         </div>
       </div>

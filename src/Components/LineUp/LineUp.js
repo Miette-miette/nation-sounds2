@@ -26,7 +26,7 @@ const LineUp = () => {
             <p>Une édition haute en couleurs et en talents internationaux!</p>
                 
             <div id="carouselArtiste" >
-                <div id="conteneurCarousel" className="d-flex flex-row" /*data-aos="fade-left" data-aos-duration="1000"*/>
+                <div id="conteneurCarousel" className="d-flex flex-row" dataAos="fade-left" dataAosDuration="1000">
                 {
                     concert.map((concert)=>
                        

@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from "react";
 import axios from "axios";
+import { Link } from "react-router-dom";
 
 const News = () => {
     const [data, setData]= useState([])
@@ -31,6 +32,7 @@ const News = () => {
                                 <h3 className="title">{article.title}</h3>
                                 <p className="chapeau">{article.summary}</p>
                             </div>
+                            <Link to={`/news/${article.id}`} className="button-style">Lire la suite</Link>
                         </div> 
                     )
                 }

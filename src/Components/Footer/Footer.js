@@ -1,4 +1,7 @@
 function footer(){
+
+    const baseUrl = 'http://127.0.0.1:8000';
+
     return(
         <footer className="d-flex flex-column justify-content-end align-items-center ">
 
@@ -56,9 +59,9 @@ function footer(){
 
             <div id="bottomFooter">
                 <div id="informationFooter" className="d-flex flex-row justify-content-center align-items-center"> 
-                    <a href="./Pages/FAQ"> FAQ</a>
+                    <a href="./pages/FAQ"> FAQ</a>
                     <p>|</p>
-                    <a href="https://127.0.0.1:8000/index.php/contact"> Contact</a>
+                    <a href={`${baseUrl}/contact`}> Contact</a>
                     <p>|</p>
                     <a>Plan du site</a>
                     <p>|</p>
