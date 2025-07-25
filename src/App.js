@@ -6,6 +6,7 @@ import Concerts from './Pages/Concerts';
 import Carte from './Pages/Carte';
 import Programmation from './Pages/Programmation';
 import FAQ from './Pages/FAQ';
+import { AuthProvider } from "./contexts/AuthContext";
 
 import Alert from './Components/Alert/Alert';
 import Navbar from './Components/Navbar/Navbar';
@@ -20,7 +21,8 @@ import PageNews from './Components/PagesNews/PageNews';
 function App() {
   return (
     <Router>
-      <div className="App">
+      <AuthProvider>
+        <div className="App">
         <header className="App-header">
           <Alert/>
           <Navbar />
@@ -43,6 +45,8 @@ function App() {
         </div>
       </div>
       <Footer/>
+      </AuthProvider>
+      
     </Router>
   );
 }

@@ -36,16 +36,6 @@
 	}
 }
 
-@keyframes loginSlide {
-	0% {
-		transform: translateX(400px);
-	}
-
-	100% {
-		transform: translateX(0);
-	}
-}
-
 .navbar-links{
     display: none;
     justify-content: center;
@@ -67,11 +57,11 @@
     background-color:#c4cb99 ;
     filter: drop-shadow(2px 4px 4px #492E34);
     color: beige;
-    width: 20%;
+    width: 100%;
     height: 100%;
     right: 0;
     padding: 120px 2%;
-    animation: loginSlide 1s ease 0s 1 normal forwards;
+    animation: menuSlide 1s ease 0s 1 normal forwards;
     z-index: 6; 
 }
 

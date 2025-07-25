@@ -1,12 +1,14 @@
 import { Link } from "react-router-dom";
 import './navbar.css';
 import React, { Component, useState } from 'react';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { useAuth } from "../../contexts/AuthContext";
 
 
 function Navbar() {
 
-  const [showMenu, setShowMenu] = useState(false)
+  const [showMenu, setShowMenu] = useState(false);
+  const { user, logout, login } = useAuth();
+  const baseUrl = 'http://127.0.0.1:8000';
 
   const handleShowMenu = () =>{
     setShowMenu(!showMenu)
@@ -43,18 +45,20 @@ function Navbar() {
 
       <div className={`navbar-login ${showLogin ? "show-login" : "hide"}`}>
         <h2>Mon espace Nation-Sounds</h2>
-        <ul /*if a faire si connecté ou déco*/>
-          <li>
-            <Link to="http://127.0.0.1:8000/connexion">
-              <button className="loginbtn">Se connecter</button>
-            </Link>
-          </li>
-          <li>
-            <Link to="http://127.0.0.1:8000/inscription">
-              <button className="loginbtn">S'inscrire</button>
-            </Link>
-          </li>
-        </ul>
+        {user ? (
+          <div>
+            <p>Bienvenue, {user.username} !</p>
+            
+            <Link to={`${baseUrl}/utilisateur/dashboard/${user.id}`} className="button-style">Tableau de bord</Link>
+            <button onClick={logout}>Se déconnecter</button>
+          </div>
+          ) : (
+          <div>
+              <Link to={`${baseUrl}/connexion`} className="button-style">Se connecter</Link>
+              <Link to={`${baseUrl}/inscription`} className="button-style">S'inscrire</Link>
+          </div> 
+        )}
+        
       </div>
 
       <nav className={`navbar-links ${showMenu ? "show-nav" : "hide"}`}>
