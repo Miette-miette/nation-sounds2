@@ -1,6 +1,10 @@
+import axios from "axios";
+
 function footer(){
 
-    const baseUrl = 'http://127.0.0.1:8000';
+    const baseUrl = axios.create({
+        baseURL: process.env.REACT_APP_BASE_URL,
+    });
 
     return(
         <footer className="d-flex flex-column justify-content-end align-items-center ">

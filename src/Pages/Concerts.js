@@ -17,7 +17,9 @@ const days = [
   { date: "2024-07-28", label: "DIM 28/07" },
 ];
 
-const baseUrl = "http://127.0.0.1:8000";
+const baseUrl = axios.create({
+  baseURL: process.env.REACT_APP_BASE_URL,
+});
 const endpoint  = "/api/event";
 
 // Affichage scènes

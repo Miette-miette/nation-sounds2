@@ -1,5 +1,6 @@
 import { Link } from "react-router-dom";
 import './navbar.css';
+import axios from "axios";
 import React, { Component, useState } from 'react';
 import { useAuth } from "../../contexts/AuthContext";
 
@@ -8,7 +9,9 @@ function Navbar() {
 
   const [showMenu, setShowMenu] = useState(false);
   const { user, logout, login } = useAuth();
-  const baseUrl = 'http://127.0.0.1:8000';
+  const baseUrl = axios.create({
+        baseURL: process.env.REACT_APP_BASE_URL,
+    });
 
   const handleShowMenu = () =>{
     setShowMenu(!showMenu)

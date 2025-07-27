@@ -6,7 +6,9 @@ import { formatDate, formatTime } from "../../utils/date";
 const LineUp = () => {
     const [concert, setConcert]= useState([])
 
-    const baseUrl = 'http://127.0.0.1:8000'; 
+    const baseUrl = axios.create({
+        baseURL: process.env.REACT_APP_BASE_URL,
+    });
     const endpoint = '/api/event';
 
     useEffect(() => {

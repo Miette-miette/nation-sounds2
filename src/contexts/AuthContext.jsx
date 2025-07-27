@@ -7,7 +7,9 @@ export const AuthProvider = ({ children }) => {
     const [user, setUser] = useState(null);
     const [loading, setLoading] = useState(true);
 
-    const baseUrl = 'http://127.0.0.1:8000';
+    const baseUrl = axios.create({
+        baseURL: process.env.REACT_APP_BASE_URL,
+    });
 
     // Vérifie l'utilisateur connecté au chargement
     useEffect(() => {

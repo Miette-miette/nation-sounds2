@@ -9,7 +9,9 @@ const Alert = () =>{
     const [showAlert, setShowAlert] = useState(true);
     const [closing, setClosing] = useState(false);
 
-    const baseUrl = 'http://127.0.0.1:8000'; 
+    const baseUrl = axios.create({
+        baseURL: process.env.REACT_APP_BASE_URL,
+    });
     const endpoint = '/api/alert';
 
     useEffect(() => {

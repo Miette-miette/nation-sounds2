@@ -24,7 +24,9 @@ const Carte = () =>{
     const [selectedMarker, setSelectedMarker] = useState(null);
 
 
-    const baseUrl = 'http://127.0.0.1:8000'; 
+    const baseUrl = axios.create({
+        baseURL: process.env.REACT_APP_BASE_URL,
+    });
     const endpointMapSettings = '/api/map';
     const endpointMarker = '/api/marker';
 
