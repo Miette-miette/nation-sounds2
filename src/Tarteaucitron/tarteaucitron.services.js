@@ -1582,13 +1582,13 @@ tarteaucitron.services.openwebanalytics = {
             return;
         }
 
-        window.owa_baseURL = tarteaucitron.user.openwebanalyticsHost;
+        window.owa_baseUrl = tarteaucitron.user.openwebanalyticsHost;
         window.owa_cmds = window.owa_cmds || [];
         window.owa_cmds.push(['setSiteId', tarteaucitron.user.openwebanalyticsId]);
         window.owa_cmds.push(['trackPageView']);
         window.owa_cmds.push(['trackClicks']);
 
-        tarteaucitron.addScript(window.owa_baseURL + 'modules/base/js/owa.tracker-combined-min.js');
+        tarteaucitron.addScript(window.owa_baseUrl + 'modules/base/js/owa.tracker-combined-min.js');
     }
 };
 
@@ -3412,7 +3412,7 @@ tarteaucitron.services.firebase = {
                 var firebaseConfig = {
                     apiKey: tarteaucitron.user.firebaseApiKey,
                     authDomain: tarteaucitron.user.firebaseAuthDomain,
-                    databaseURL: tarteaucitron.user.firebaseDatabaseURL,
+                    databaseUrl: tarteaucitron.user.firebaseDatabaseUrl,
                     projectId: tarteaucitron.user.firebaseProjectId,
                     storageBucket: tarteaucitron.user.firebaseStorageBucket,
                     appId: tarteaucitron.user.firebaseAppId,
