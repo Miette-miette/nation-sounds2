@@ -7,13 +7,13 @@ export const AuthProvider = ({ children }) => {
     const [user, setUser] = useState(null);
     const [loading, setLoading] = useState(true);
 
-    const baseUrl = axios.create({
+    const baseURL = axios.create({
         baseURL: process.env.REACT_APP_BASE_URL,
     });
 
     // Vérifie l'utilisateur connecté au chargement
     useEffect(() => {
-        axios.get(`${baseUrl}/api/userme`, { withCredentials: true })
+        axios.get(`${baseURL}/api/userme`, { withCredentials: true })
         .then(res => setUser(res.data.user))
         .catch(() => setUser(null))
         .finally(() => setLoading(false));
@@ -22,7 +22,7 @@ export const AuthProvider = ({ children }) => {
     // Connexion : après login
     const login = async () => {
         try {
-        const res = await axios.get(`${baseUrl}/api/userme`, { withCredentials: true });
+        const res = await axios.get(`${baseURL}/api/userme`, { withCredentials: true });
         setUser(res.data.user);
         } catch {
         setUser(null);
@@ -32,7 +32,7 @@ export const AuthProvider = ({ children }) => {
     // Déconnexion
     const logout = async () => {
         try {
-        await axios.post(`${baseUrl}/deconnexion`, {}, { withCredentials: true });
+        await axios.post(`${baseURL}/deconnexion`, {}, { withCredentials: true });
         setUser(null);
         } catch (err) {
         console.error("Erreur de déconnexion", err);

@@ -208,7 +208,7 @@ const Programmation = () =>{
                 <Link to={`/artiste/${prog.artist.id}`}
                     key={prog.id}
                     className="progItem d-flex flex-column"
-                    style={{backgroundImage: `url(${baseUrl}${prog.artist.imgUrl})`}}>
+                    style={{backgroundImage: `url(${baseURL}${prog.artist.imgUrl})`}}>
                     <div className="conteneurImg d-flex flex-row justify-content-end align-items-start">
                         <img className="iconScene d-flex justify-content-end align-items-end" src={sceneIcon} alt="icon scène"/>
                     </div>

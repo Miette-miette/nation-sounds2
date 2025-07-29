@@ -40,7 +40,7 @@ const SceneSection = ({ scene, concerts }) => {
 
       {concerts.map((c) => (
         <Link to={`/artiste/${c.artist.id}`} className="concertItem" key={`${c.artist.name}-${c.begin_time}`}>
-          <img className="src" src={`${baseUrl}${c.artist.imgUrl}`}width="100" height="100" alt={c.artist.name}/>
+          <img className="src" src={`${baseURL}${c.artist.imgUrl}`}width="100" height="100" alt={c.artist.name}/>
           <div>
             <h3 className="title d-flex justify-content-start">{c.artist.name}</h3>
             <p className="heure">{formatTime(c.begin_time)} / {formatTime(c.end_time)}</p>

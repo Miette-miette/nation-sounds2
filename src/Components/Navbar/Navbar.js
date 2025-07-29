@@ -50,13 +50,13 @@ function Navbar() {
           <div>
             <p>Bienvenue, {user.username} !</p>
             
-            <Link to={`${baseUrl}/utilisateur/dashboard/${user.id}`} className="button-style">Tableau de bord</Link>
+            <Link to={`${baseURL}/utilisateur/dashboard/${user.id}`} className="button-style">Tableau de bord</Link>
             <button onClick={logout}>Se déconnecter</button>
           </div>
           ) : (
           <div>
-              <Link to={`${baseUrl}/connexion`} className="button-style">Se connecter</Link>
-              <Link to={`${baseUrl}/inscription`} className="button-style">S'inscrire</Link>
+              <Link to={`${baseURL}/connexion`} className="button-style">Se connecter</Link>
+              <Link to={`${baseURL}/inscription`} className="button-style">S'inscrire</Link>
           </div> 
         )}
         

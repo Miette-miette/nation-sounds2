@@ -29,7 +29,7 @@ const PageArtist = () => {
 
             <section className="d-flex flex-row justify-content-center wrapper-beige artist-info m-5">
                 <div className="artist-button d-flex flex-column ">
-                    <img src={`${baseUrl}${artist.imgUrl}`} alt={artist.name} width="200" height="200"/>
+                    <img src={`${baseURL}${artist.imgUrl}`} alt={artist.name} width="200" height="200"/>
                     <a href={artist.spotify_link} className="button-style mt-4">
                         <svg viewBox="0 0 20 20" version="1.1" xmlns="http://www.w3.org/2000/svg" fill="#ffffff" stroke="#ffffff" className="icon">
                             <g id="SVGRepo_bgCarrier" strokeWidth="0"></g><g id="SVGRepo_tracerCarrier" strokeLinecap="round" strokeLinejoin="round"></g><g id="SVGRepo_iconCarrier"> 

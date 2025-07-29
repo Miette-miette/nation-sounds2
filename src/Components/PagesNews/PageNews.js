@@ -29,7 +29,7 @@ const PageNews = () => {
 
             <section className="d-flex flex-column justify-content-center wrapper-beige m-5">
                 <div className="artist-button d-flex flex-column ">
-                    <img src={`${baseUrl}${news.imgUrl}`} alt={news.title} height="200"/>  
+                    <img src={`${baseURL}${news.imgUrl}`} alt={news.title} height="200"/>  
                 </div> 
                 
                 <div className="d-flex flex-column article-text p-4">

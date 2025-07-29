@@ -63,7 +63,7 @@ function footer(){
                 <div id="informationFooter" className="d-flex flex-row justify-content-center align-items-center"> 
                     <a href="./pages/FAQ"> FAQ</a>
                     <p>|</p>
-                    <a href={`${baseUrl}/contact`}> Contact</a>
+                    <a href={`${baseURL}/contact`}> Contact</a>
                     <p>|</p>
                     <a>Plan du site</a>
                     <p>|</p>

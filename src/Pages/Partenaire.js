@@ -31,7 +31,7 @@ const Partenaire = () =>{
                         .filter((partenaire)=> partenaire.type === "Institution")
                         .map((i)=>
                         <div className="imgPartenaireConteneur  d-flex flex-column flex-lg-row justify-content-center justify-content-md-between align-items-center ">
-                            <img src={`${baseUrl}${i.imgUrl}`}/>
+                            <img src={`${baseURL}${i.imgUrl}`}/>
                             <div className="articleDescription d-flex flex-column justify-content-center">
                                 <h2 className="title">{i.name}</h2>
                                 <p className="description">{i.content}</p>
@@ -50,7 +50,7 @@ const Partenaire = () =>{
                     .filter((partenaire)=> partenaire.type === "Entreprise")
                     .map((e)=>
                         <div className="imgPartenaireConteneur  d-flex flex-column flex-lg-row justify-content-center justify-content-md-between align-items-center ">
-                            <img src={`${baseUrl}${e.imgUrl}`}/>
+                            <img src={`${baseURL}${e.imgUrl}`}/>
                             <div className="articleDescription d-flex flex-column justify-content-center">
                                 <h2 className="title">{e.name}</h2>
                                 <p className="description">{e.content}</p>
