@@ -15,7 +15,7 @@ const Alert = () =>{
     const endpoint = '/api/alert';
 
     useEffect(() => {
-        axios.get(baseUrl + endpoint)
+        baseUrl.get(endpoint)
         .then((res)=> {
             setAlert(res.data);
             setCurrentAlert(res.data[0] || null);

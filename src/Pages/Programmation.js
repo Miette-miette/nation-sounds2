@@ -27,7 +27,7 @@ const Programmation = () =>{
 
     useEffect(() => {
     axios
-      .get(`${baseUrl}${endpoint}`)
+      baseUrl.get(endpoint)
       .then((res) => {
         setProgrammation(res.data);
         setLoading(false);

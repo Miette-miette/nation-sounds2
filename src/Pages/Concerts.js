@@ -60,8 +60,7 @@ const Concerts = () => {
   const [error, setError] = useState(null);
 
   useEffect(() => {
-    axios
-      .get(`${baseUrl}${endpoint}`)
+      baseUrl.get(endpoint)
       .then((res) => {
         setConcerts(res.data);
         setLoading(false);

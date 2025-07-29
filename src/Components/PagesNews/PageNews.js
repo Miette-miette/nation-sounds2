@@ -14,7 +14,7 @@ const PageNews = () => {
     const endpoint = '/api/news';
 
     useEffect(() => {
-        axios.get(`${baseUrl}${endpoint}/${id}`)
+        baseUrl.get(`${endpoint}/${id}`)
             .then((res) => setNews(res.data))
             .catch((err) => console.error(err));
     }, [id]);

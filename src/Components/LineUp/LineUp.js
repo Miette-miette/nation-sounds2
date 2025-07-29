@@ -12,7 +12,7 @@ const LineUp = () => {
     const endpoint = '/api/event';
 
     useEffect(() => {
-        axios.get(baseUrl + endpoint)
+        baseUrl.get(endpoint)
         .then((res)=>setConcert(res.data))
     },[])
     console.log(concert);
@@ -33,10 +33,10 @@ const LineUp = () => {
                     (concert || []).map((concert)=>
                        
                         <Link to={`/artiste/${concert.artist.id}`} className="carouselCard" style={{backgroundImage: `url(${baseUrl}${concert.artist.imgUrl})`}}>
-                            <div class="infoCard">
-                                <h3 class="title">{concert.artist.name}</h3>
-                                <p class="scene">{concert.location.name}</p>
-                                <p class="date">{formatDate(concert.date)}</p>
+                            <div className="infoCard">
+                                <h3 className="title">{concert.artist.name}</h3>
+                                <p className="scene">{concert.location.name}</p>
+                                <p className="date">{formatDate(concert.date)}</p>
                             </div>
                         </Link>
                     )

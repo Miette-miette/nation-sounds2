@@ -11,7 +11,7 @@ const News = () => {
     const endpoint = '/api/news';
 
     useEffect(() => {
-        axios.get(baseUrl + endpoint)
+        baseUrl.get(endpoint)
         .then((res)=>setData(res.data))
     },[])
     console.log(data);

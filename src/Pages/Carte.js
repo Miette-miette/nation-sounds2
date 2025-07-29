@@ -31,8 +31,8 @@ const Carte = () =>{
     const endpointMarker = '/api/marker';
 
     useEffect(() => {
-        axios.get(baseUrl + endpointMapSettings).then((res)=>setCarte(res.data));
-        axios.get(baseUrl + endpointMarker).then((res)=>setMarker(res.data));
+        baseUrl.get(endpointMapSettings).then((res)=>setCarte(res.data));
+        baseUrl.get(endpointMarker).then((res)=>setMarker(res.data));
     },[])
 
     console.log(carte);

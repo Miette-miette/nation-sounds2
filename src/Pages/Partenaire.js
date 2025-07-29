@@ -10,7 +10,7 @@ const Partenaire = () =>{
     const endpoint = '/api/partner';
 
     useEffect(() => {
-        axios.get(baseUrl + endpoint)
+        baseUrl.get(endpoint)
         .then((res)=>setPartenaire(res.data))
     },[]);
     console.log(partenaire);

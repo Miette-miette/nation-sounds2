@@ -14,7 +14,7 @@ const PageArtist = () => {
     const endpoint = '/api/artist';
 
     useEffect(() => {
-        axios.get(`${baseUrl}${endpoint}/${id}`)
+        baseUrl.get(`${endpoint}/${id}`)
             .then((res) => setArtist(res.data))
             .catch((err) => console.error(err));
     }, [id]);
