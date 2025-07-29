@@ -26,7 +26,6 @@ const Programmation = () =>{
     const endpoint = '/api/event';
 
     useEffect(() => {
-    axios
       baseUrl.get(endpoint)
       .then((res) => {
         setProgrammation(res.data);
