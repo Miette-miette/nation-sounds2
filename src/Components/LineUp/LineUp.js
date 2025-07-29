@@ -30,7 +30,7 @@ const LineUp = () => {
             <div id="carouselArtiste" >
                 <div id="conteneurCarousel" className="d-flex flex-row" dataAos="fade-left" dataAosDuration="1000">
                 {
-                    concert.map((concert)=>
+                    (concert || []).map((concert)=>
                        
                         <Link to={`/artiste/${concert.artist.id}`} className="carouselCard" style={{backgroundImage: `url(${baseUrl}${concert.artist.imgUrl})`}}>
                             <div class="infoCard">
