@@ -17,9 +17,7 @@ const days = [
   { date: "2024-07-28", label: "DIM 28/07" },
 ];
 
-const baseUrl = axios.create({
-  baseURL: process.env.REACT_APP_BASE_URL,
-});
+const baseURL = process.env.REACT_APP_BASE_URL;
 const endpoint  = "/api/event";
 
 // Affichage scènes
@@ -60,7 +58,7 @@ const Concerts = () => {
   const [error, setError] = useState(null);
 
   useEffect(() => {
-      baseUrl.get(endpoint)
+      axios.get(`${baseURL}${endpoint}`)
       .then((res) => {
         setConcerts(res.data);
         setLoading(false);

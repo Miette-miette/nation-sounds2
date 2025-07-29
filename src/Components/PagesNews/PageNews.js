@@ -8,13 +8,11 @@ const PageNews = () => {
     const {id} = useParams();
     const [news, setNews] = useState(null);
 
-    const baseUrl = axios.create({
-        baseURL: process.env.REACT_APP_BASE_URL,
-    }); 
+    const baseURL = process.env.REACT_APP_BASE_URL;
     const endpoint = '/api/news';
 
     useEffect(() => {
-        baseUrl.get(`${endpoint}/${id}`)
+        axios.get(`${baseURL}${endpoint}/${id}`)
             .then((res) => setNews(res.data))
             .catch((err) => console.error(err));
     }, [id]);

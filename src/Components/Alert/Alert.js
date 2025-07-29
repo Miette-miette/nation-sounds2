@@ -9,13 +9,11 @@ const Alert = () =>{
     const [showAlert, setShowAlert] = useState(true);
     const [closing, setClosing] = useState(false);
 
-    const baseUrl = axios.create({
-        baseURL: process.env.REACT_APP_BASE_URL,
-    });
+    const baseURL = process.env.REACT_APP_BASE_URL; 
     const endpoint = '/api/alert';
 
     useEffect(() => {
-        baseUrl.get(endpoint)
+        axios.get(`${baseURL}${endpoint}`)
         .then((res)=> {
             setAlert(res.data);
             setCurrentAlert(res.data[0] || null);

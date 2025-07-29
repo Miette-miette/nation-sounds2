@@ -24,15 +24,13 @@ const Carte = () =>{
     const [selectedMarker, setSelectedMarker] = useState(null);
 
 
-    const baseUrl = axios.create({
-        baseURL: process.env.REACT_APP_BASE_URL,
-    });
+    const baseURL = process.env.REACT_APP_BASE_URL;
     const endpointMapSettings = '/api/map';
     const endpointMarker = '/api/marker';
 
     useEffect(() => {
-        baseUrl.get(endpointMapSettings).then((res)=>setCarte(res.data));
-        baseUrl.get(endpointMarker).then((res)=>setMarker(res.data));
+        axios.get(baseUrl + endpointMapSettings).then((res)=>setCarte(res.data));
+        axios.get(baseUrl + endpointMarker).then((res)=>setMarker(res.data));
     },[])
 
     console.log(carte);

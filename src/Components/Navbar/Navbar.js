@@ -9,9 +9,7 @@ function Navbar() {
 
   const [showMenu, setShowMenu] = useState(false);
   const { user, logout, login } = useAuth();
-  const baseUrl = axios.create({
-        baseURL: process.env.REACT_APP_BASE_URL,
-    });
+  const baseURL = process.env.REACT_APP_BASE_URL;
 
   const handleShowMenu = () =>{
     setShowMenu(!showMenu)

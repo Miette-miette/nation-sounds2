@@ -8,13 +8,11 @@ const PageArtist = () => {
     const {id} = useParams();
     const [artist, setArtist] = useState(null);
 
-    const baseUrl = axios.create({
-        baseURL: process.env.REACT_APP_BASE_URL,
-    });
+    const baseURL = process.env.REACT_APP_BASE_URL;
     const endpoint = '/api/artist';
 
     useEffect(() => {
-        baseUrl.get(`${endpoint}/${id}`)
+        axios.get(`${baseURL}${endpoint}/${id}`)
             .then((res) => setArtist(res.data))
             .catch((err) => console.error(err));
     }, [id]);

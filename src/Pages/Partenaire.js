@@ -4,13 +4,11 @@ import axios from "axios";
 const Partenaire = () =>{
     const [partenaire, setPartenaire]= useState([]);
 
-    const baseUrl = axios.create({
-        baseURL: process.env.REACT_APP_BASE_URL,
-    });
+    const baseURL = process.env.REACT_APP_BASE_URL;
     const endpoint = '/api/partner';
 
     useEffect(() => {
-        baseUrl.get(endpoint)
+        axios.get(`${baseURL}${endpoint}`)
         .then((res)=>setPartenaire(res.data))
     },[]);
     console.log(partenaire);

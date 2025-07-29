@@ -5,13 +5,11 @@ import { Link } from "react-router-dom";
 const News = () => {
     const [data, setData]= useState([])
 
-    const baseUrl = axios.create({
-        baseURL: process.env.REACT_APP_BASE_URL,
-    });
+    const baseURL = process.env.REACT_APP_BASE_URL;
     const endpoint = '/api/news';
 
     useEffect(() => {
-        baseUrl.get(endpoint)
+        axios.get(`${baseURL}${endpoint}`)
         .then((res)=>setData(res.data))
     },[])
     console.log(data);

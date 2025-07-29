@@ -20,13 +20,11 @@ const Programmation = () =>{
         "Resonance":"../../media/scene/resonance.png",
     }
     
-    const baseUrl = axios.create({
-        baseURL: process.env.REACT_APP_BASE_URL,
-    });
+    const baseURL = process.env.REACT_APP_BASE_URL;
     const endpoint = '/api/event';
 
     useEffect(() => {
-      baseUrl.get(endpoint)
+      axios.get(`${baseURL}${endpoint}`)
       .then((res) => {
         setProgrammation(res.data);
         setLoading(false);
