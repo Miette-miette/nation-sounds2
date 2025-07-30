@@ -109,7 +109,7 @@ function Navbar() {
             </Link>
           </li> 
           <li>
-            <Link to='http://127.0.0.1:8000/contact' className="links" onClick={handleShowMenu}>
+            <Link to='/contact' className="links" onClick={handleShowMenu}>
               <img src='../../media/doodle/metal.png' alt="main qui fait le symbole métal "/>
               <p>CONTACT</p>
             </Link>

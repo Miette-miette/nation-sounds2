@@ -1,5 +1,4 @@
-import React, { useEffect, useState } from "react";
-import { useRef } from 'react';
+import React, { useState } from "react";
 
 function FAQ() {
 
