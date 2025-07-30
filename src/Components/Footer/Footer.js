@@ -61,7 +61,7 @@ function footer(){
 
             <div id="bottomFooter">
                 <div id="informationFooter" className="d-flex flex-row justify-content-center align-items-center"> 
-                    <a href="./pages/FAQ"> FAQ</a>
+                    <a href="/FAQ"> FAQ</a>
                     <p>|</p>
                     <a href={`${baseURL}/contact`}> Contact</a>
                     <p>|</p>
