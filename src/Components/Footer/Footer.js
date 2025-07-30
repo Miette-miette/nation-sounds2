@@ -1,4 +1,4 @@
-import axios from "axios";
+import { Link } from "react-router-dom";
 
 function footer(){
 
@@ -61,13 +61,13 @@ function footer(){
 
             <div id="bottomFooter">
                 <div id="informationFooter" className="d-flex flex-row justify-content-center align-items-center"> 
-                    <a href="/FAQ"> FAQ</a>
+                    <Link to="/FAQ"> FAQ</Link>
                     <p>|</p>
-                    <a href={`${baseURL}/contact`}> Contact</a>
+                    <Link to={`${baseURL}/contact`}> Contact</Link>
                     <p>|</p>
                     <a>Plan du site</a>
                     <p>|</p>
-                    <a href="/mentions-legales">Mention légale</a>                   
+                    <Link to="/mentions-legales">Mention légale</Link>                   
                 </div>
             </div>
         </footer>

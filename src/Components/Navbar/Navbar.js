@@ -1,6 +1,5 @@
 import { Link } from "react-router-dom";
 import './navbar.css';
-import axios from "axios";
 import React, { Component, useState } from 'react';
 import { useAuth } from "../../contexts/AuthContext";
 
