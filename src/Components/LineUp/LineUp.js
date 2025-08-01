@@ -36,7 +36,7 @@ const LineUp = () => {
                         >
                             <div className="infoCard">
                                 <h3 className="title">{concertItem.artist.name}</h3>
-                                <p className="scene">{concertItem.location.name}</p>
+                                <p className="scene">{concertItem.location.name ?? 'Nom inconnu'}</p>
                                 <p className="date">{formatDate(concertItem.date)}</p>
                             </div>
                         </Link>
