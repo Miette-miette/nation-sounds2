@@ -32,7 +32,7 @@ const LineUp = () => {
                             key={concertItem.id} 
                             to={`/artiste/${concertItem.artist.id}`} 
                             className="carouselCard" 
-                            style={{ backgroundImage: `url(${baseURL}${concertItem.artist.imgUrl})` }}
+                            style={{ backgroundImage: `url(https://api.nsfestival2024.online${concertItem.artist.imgUrl})` }}
                         >
                             <div className="infoCard">
                                 <h3 className="title">{concertItem.artist.name}</h3>
