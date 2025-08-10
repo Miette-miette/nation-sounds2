@@ -8,7 +8,7 @@ const PageArtist = () => {
     const {id} = useParams();
     const [artist, setArtist] = useState(null);
 
-    const baseURL = 'https://api.nsfestival2024.online';
+    const baseURL = process.env.REACT_APP_BASE_URL;
     const endpoint = '/api/artist';
 
     useEffect(() => {
@@ -29,7 +29,7 @@ const PageArtist = () => {
 
             <section className="d-flex flex-row justify-content-center wrapper-beige artist-info m-5">
                 <div className="artist-button d-flex flex-column ">
-                    <img src={`${baseURL}${artist.imgUrl}`} alt={artist.name} width="200" height="200"/>
+                    <img src={`"https://api.nsfestival2024.online"+${artist.imgUrl}`} alt={artist.name} width="200" height="200"/>
                     <a href={artist.spotify_link} className="button-style mt-4">
                         <svg viewBox="0 0 20 20" version="1.1" xmlns="http://www.w3.org/2000/svg" fill="#ffffff" stroke="#ffffff" className="icon">
                             <g id="SVGRepo_bgCarrier" strokeWidth="0"></g><g id="SVGRepo_tracerCarrier" strokeLinecap="round" strokeLinejoin="round"></g><g id="SVGRepo_iconCarrier"> 
