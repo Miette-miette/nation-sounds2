@@ -8,7 +8,7 @@ const PageArtist = () => {
     const {id} = useParams();
     const [artist, setArtist] = useState(null);
 
-    const baseURL = process.env.REACT_APP_BASE_URL;
+    const baseURL = 'https://api.nsfestival2024.online';
     const endpoint = '/api/artist';
 
     useEffect(() => {

@@ -8,7 +8,7 @@ const PageNews = () => {
     const {id} = useParams();
     const [news, setNews] = useState(null);
 
-    const baseURL = process.env.REACT_APP_BASE_URL;
+    const baseURL = 'https://api.nsfestival2024.online';
     const endpoint = '/api/news';
 
     useEffect(() => {
