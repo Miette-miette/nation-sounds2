@@ -14,6 +14,7 @@ import Footer from './Components/Footer/Footer';
 
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 import './Assets/style/style.css';
+import './Assets/style/media-queries.css';
 import HeaderBg from './Components/HeaderBg/HeaderBg';
 import PageArtist from './Components/PageArtist/PageArtist';
 import PageNews from './Components/PagesNews/PageNews';

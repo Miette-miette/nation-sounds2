@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 import axios from "axios";
 import { Link } from "react-router-dom";
+import './news.css';
 
 const News = () => {
     const [data, setData]= useState([])
@@ -24,7 +25,7 @@ const News = () => {
             <div id="articleConteneur" className="d-flex flex-row" /*data-aos="fade-left" data-aos-duration="1000"*/>
                 {
                     data.map((article)=>
-                        <div className="articleCard d-flex flex-column" id={article.id} key={article.id}>
+                        <div className="articleCard card d-flex flex-column" id={article.id} key={article.id}>
                             <div className="articleImg">
                                 <img src={`${baseURL}${article.imgUrl}`}/>
                             </div>

@@ -2,6 +2,7 @@ import React, { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import axios from "axios";
 import { formatDate } from "../../utils/date";
+import './lineup.css';
 
 const LineUp = () => {
     const [concert, setConcert] = useState([]);
@@ -31,7 +32,7 @@ const LineUp = () => {
                         <Link 
                             key={concertItem.id} 
                             to={`/artiste/${concertItem.artist.id}`} 
-                            className="carouselCard" 
+                            className="carouselCard card" 
                             style={{ backgroundImage: `url(https://api.nsfestival2024.online${concertItem.artist.imgUrl})` }}
                         >
                             <div className="infoCard">

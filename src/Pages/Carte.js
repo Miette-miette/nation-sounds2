@@ -46,7 +46,7 @@ const Carte = () =>{
             
             <div id="conteneurCarte" className="d-flex flex-column flex-md-row ">
                 
-                <div id="map">
+                <div id="map" className="col-12 col-md-8">
                     {
                         carte.map((carte)=>
                          
@@ -132,7 +132,7 @@ const Carte = () =>{
                    
                 </div>
 
-                <div className="aside-map d-flex flex-column">
+                <div className="aside-map col-12 col-md-8">
                         <button className="button-style h5 p-3" onClick={() => setGeoActive(true)}>
                             📍 Me localiser
                         </button>

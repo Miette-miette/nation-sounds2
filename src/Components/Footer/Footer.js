@@ -1,4 +1,5 @@
 import { Link } from "react-router-dom";
+import './footer.css';
 
 function footer(){
 
@@ -21,7 +22,7 @@ function footer(){
                     <img src="../../media/doodle/happyfleur2.png" className="decoTitreShake"/>
                 </div>
                     
-                <div id="rsFooter" className="d-flex flex-column align-items-center justify-content-end">
+                <div id="rsFooter" className="d-flex flex-column align-items-center justify-content-center justify-content-md-end">
                     <p>Retrouvez nous-sur les réseaux!</p>
 
                     <div className="d-flex flex-row flex-wrap align-items-center">
@@ -60,13 +61,13 @@ function footer(){
             </div>
 
             <div id="bottomFooter">
-                <div id="informationFooter" className="d-flex flex-row justify-content-center align-items-center"> 
+                <div id="informationFooter" className="d-flex flex-column flex-md-row justify-content-center align-items-center"> 
                     <Link to="/FAQ"> FAQ</Link>
-                    <p>|</p>
+                    <p className="d-none d-md-flex">|</p>
                     <Link to={`${baseURL}/contact`}> Contact</Link>
-                    <p>|</p>
+                    <p className="d-none d-md-flex">|</p>
                     <a>Plan du site</a>
-                    <p>|</p>
+                    <p className="d-none d-md-flex">|</p>
                     <Link to="/mentions-legales">Mention légale</Link>                   
                 </div>
             </div>

@@ -1,0 +1,47 @@
+/*
+ACCUEIL ARTICLE ACTU
+*/ 
+#news { 
+    background-color: #E47161; 
+    width: 100%; 
+    padding: 20px 20%; 
+    display: flex; 
+    flex-direction: column; 
+    align-content: center; 
+    filter: drop-shadow(2px 4px 4px #492E34); 
+    overflow: hidden; 
+} 
+#news>h2{ 
+    display: flex; 
+    justify-content: center; 
+} 
+.articleCard{ 
+    display: flex; 
+    flex-direction: row; 
+    align-items: center; 
+    width: 400px; 
+    background-color:beige; 
+    border-style: solid; 
+    border-color: #492E34; 
+    padding: 2%; 
+    margin: 1%; 
+    border-radius: 8px; 
+    font-family: "Afacad", sans-serif; 
+    font-optical-sizing: auto; 
+    cursor: pointer; 
+    filter: drop-shadow(2px 4px 4px #492E34); 
+} 
+.articleImg{ 
+    height: 250px; 
+    display: flex; 
+    justify-content: center; 
+} .articleImg>img{ 
+    width: 300px; 
+    object-fit: cover; 
+    border-radius: 8px; 
+} 
+.articleDescription{ padding: 6%; } 
+#articleConteneur{ 
+    overflow-x:scroll; 
+    scroll-behavior: smooth; 
+}

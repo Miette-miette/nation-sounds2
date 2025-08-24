@@ -1,0 +1,15 @@
+/*ACCUEIL HUMANITAIRE */ 
+#asso{ 
+    width: 100%; 
+    padding: 20px 20%; 
+    display: flex; 
+    flex-direction: column; 
+    align-content: center; 
+} 
+#assoTxt>img{ 
+    border-radius: 100%; 
+    width: 400px; 
+    height: 400px; 
+    object-fit: cover; 
+    margin-right: 5% ; 
+}

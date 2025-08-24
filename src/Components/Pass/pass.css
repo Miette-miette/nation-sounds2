@@ -1,5 +1,3 @@
-/*ACCUEIL BILLETERIE*/
-
 #billeterie {
     width: 100%;
     padding: 2% 0 4%;
@@ -34,6 +32,11 @@
 .pass2,.pass1{
     width: 270px;
     height: 270px;
+}
+
+.pass1:hover, .pass2:hover, .pass3:hover {
+    transform: scale(110%);
+    transition: transform 0.3s ease;
 }
 
 .pass3>h3{
