@@ -16,62 +16,63 @@ img { max-width: 100%; height: auto; }
 
 @media (max-width: 600px) {
 
-  /* Global */
+    /* Global */
 
-  main, #main { padding: 6% var(--container-pad-mobile); }
-  h1 { font-size: clamp(1.8rem, 6vw, 2.2rem); }
-  h2 { font-size: clamp(1.2rem, 5vw, 1.6rem); }
+    main, #main { padding: 6% var(--container-pad-mobile); }
+    h1 { font-size: clamp(1.8rem, 6vw, 2.2rem); }
+    h2 { font-size: clamp(1.8rem, 5vw, 1.6rem); }
 
-  /* Menu */
-  #menuInfo { flex-direction: column; width: 100%; }
-  #mascotteMenu { width: 25%; margin: 0 auto; }
+    /* Menu */
+    #menuInfo { flex-direction: column; width: 100%; }
+    .visuelMenu { display: none}
+    .header-icons{ width: 50px; height: 50px;}
+    .navbar-header { padding: 5%; }
+    .links>p { font-size: 25px;}
+    .menu-icons { width: 20px ; margin: 2%;}
 
+    
     /* Footer */
 
     footer { padding: 12% 0 6%; height: 900px; }
     #logoFooter img { width: 90px; height: 90px; }
-    #topFooter{ 
-            width: 100%; 
-            margin-right: 0; 
-        } 
+    #topFooter{ width: 100%; margin-right: 0;} 
     #informationFooter{ width: 200px } 
 
     /* Accueil */
     
     #bienvenue { height: 500px; }
     #btnlanding { width: 70%; font-size: 20px; margin: 20px auto; }
+
+    #billeterie { padding: 10% 8%;}
+    .pass1, .pass2, .pass3 { margin: 5% 5%;}
+
+    .pass3{ width: 280px; height: 280px;}
+    .pass2,.pass1{ width: 250px; height: 250px;}
+
     #asso {padding: 10% 8%;}
+    #assoTxt>img{ width: 200px; height: 200px; margin: 8%;}
 
     /* Carte */
+
     #map { min-height: 400px; width: 100%; }
     .aside-map { width: 100%; margin-top: 20px; }
 }
 
-/* ------------------------------
+/* 
    TABLETTE (601px–1024px)
------------------------------- */
+*/
+
 @media (min-width: 601px) and (max-width: 1024px) {
 
-  /* Global */
-  main, #main { padding: 5% var(--container-pad-tablet); }
+    /* Global */
+    main, #main { padding: 5% var(--container-pad-tablet); }
 
-  /* Menu */
-  #menuInfo ul { padding-left: 5%; }
+    /* Menu */
+    #menuInfo ul { padding-left: 5%; }
+    
 
-  /* Carte */
-  #map { width: 55%; }
-  .aside-map { width: 45%; }
+    /* Carte */
+    #map { width: 55%; }
+    .aside-map { width: 45%; }
 }
 
-/* ------------------------------
-   DESKTOP (>=1025px)
------------------------------- */
-@media (min-width: 1025px) {
-
-  /* Global */
-  main, #main { padding: 5% var(--container-pad-desktop); }
-
-  /* Carte */
-  #map { width: 60%; }
-  .aside-map { width: 40%; }
-}

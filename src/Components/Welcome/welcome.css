@@ -9,30 +9,37 @@
 }
 
 #btnlanding { 
-  display: flex; 
-  justify-content: center; 
   font-family: "Caprasimo", serif; 
   font-weight: 400; 
   font-size: 25px; 
   z-index: 2; 
   border: solid 2px; 
   border-color: #492E34; 
-  margin: 120px 0 0; 
-  width: 25%; 
+  margin: 120px 35% 0; 
   padding: 1%; 
-  margin-left: 38%; 
   filter: drop-shadow(2px 4px 4px #492E34); 
 }
 
-#welcomeAnim{ display: flex; justify-content: center; align-items: center; }
+#fleurbtn{
+  width: 50px;
+  margin: 2%;
+  animation: logoShake 20s linear 0s infinite normal forwards;
+}
+
+#welcomeAnim{ 
+  display: flex; 
+  justify-content: center; 
+  align-items: center; 
+}
 
 #tartelette{ 
   position: absolute; 
   z-index: 2; 
-  width: 27%; 
+  width: 29%; 
   overflow: hidden; 
   animation: logoRotation 35s linear 0s infinite normal forwards; 
 }
+
 #ns_2024{ 
   position: absolute; 
   z-index: 3; 
@@ -65,6 +72,6 @@
 @media (max-width: 768px) {
   .decor { max-width: 80px;  display: none; }
   #cassette, #forme1 { display: none; } 
-  #tartelette{ width: 70%; }
+  #tartelette{ width: 73%; }
   #ns_2024{ width: 60%;}
 }

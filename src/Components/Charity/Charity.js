@@ -10,8 +10,8 @@ function charity(){
         </div>
 
 
-        <div id="assoTxt" className="d-flex flex-column flex-lg-row align-items-center" /*data-aos="fade-up" data-aos-duration="1000"*/>
-            <img src="../../media/photo/pexels-rdne-6646917.jpg" width="40%"/>
+        <div id="assoTxt" className="d-flex flex-column flex-lg-row align-items-center">
+            <img src="../../media/photo/pexels-rdne-6646917.jpg"/>
             <div>
                 <p><strong>National Sounds se veut être un festival inclusif et se distingue par son engagement humanitaire, visant à rassembler des personnes de diverses origines et à promouvoir 
                 la solidarité globale.</strong></p>

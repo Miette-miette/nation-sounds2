@@ -19,8 +19,9 @@ function welcome(){
                                   
             </div>
 
-            <div className="button-style d-flex align-items-center justify-content-center" id="btnlanding">
-                <a href="/programmation">Découvrez le programme</a>
+            <div className="button-style d-flex flex-row align-items-center justify-content-center" id="btnlanding">
+                <img src="../media/doodle/happyfleur2.png" id='fleurbtn'/>
+                <a href="/programmation" className="text-center">Découvrez le programme</a>
             </div>
         </section> 
     )
