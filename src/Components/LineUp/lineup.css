@@ -3,33 +3,28 @@
     width: 100%; 
     overflow: hidden; 
 } 
-#carouselArtiste{ 
-    padding: 20px 20% 20px 20%; 
-    width: 100%; 
-} 
+#carouselArtiste {
+  width: 80%;
+  max-width: 1000px;
+}
 #conteneurCarousel{ 
     overflow-x:scroll; 
     scroll-behavior: smooth; 
 } 
-.carouselCard{ 
-    background-image: none; 
-    background-size: cover; 
-    background-position: center; 
-    height: 320px; 
-    justify-content: end; 
-    background-color:#8f505e; 
-    border-style: solid; 
-    border-color: #492E34; 
-    margin: 5px; 
-    border-radius: 8px; 
-    filter: drop-shadow(2px 2px 2px rgb(136, 108, 72)); 
-    cursor: pointer; 
-} 
-.infoCard { 
-    width: 300px; 
-    background: linear-gradient(0deg, rgba(0,0,0,0.6278886554621849) 49%, rgba(255,255,255,0) 100%); 
-    padding: 20px; 
-} 
+.carouselCard {
+  background-size: cover;
+  background-position: center;
+  height: 320px;
+  border-radius: 12px;
+  overflow: hidden;
+  border: 3px solid #492E34;
+  filter: drop-shadow(2px 2px 2px rgb(136, 108, 72));
+}
+.infoCard {
+  background: linear-gradient(0deg, rgba(0,0,0,0.7) 40%, transparent 100%);
+  padding: 20px;
+  color: beige;
+}
 .infoCard>h3,.infoCard>p{ 
     color: beige; 
     margin: 0; 

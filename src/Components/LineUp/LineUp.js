@@ -26,24 +26,38 @@ const LineUp = () => {
 
             <p>Une édition haute en couleurs et en talents internationaux!</p>
 
-            <div id="carouselArtiste">
-                <div id="conteneurCarousel" className="d-flex flex-row">
-                    {(concert || []).map((concertItem) => (
-                        <Link 
+            <div id="carouselArtiste" className="carousel slide" data-bs-ride="carousel">
+                <div id="carousel-inner" className="d-flex flex-row">
+                    {(concert || []).map((concertItem, index) => (
+                        <div 
                             key={concertItem.id} 
-                            to={`/artiste/${concertItem.artist.id}`} 
-                            className="carouselCard card" 
-                            style={{ backgroundImage: `url(https://api.nsfestival2024.online${concertItem.artist.imgUrl})` }}
+                            className={`carousel-item ${index === 0 ? "active" : ""}`}
                         >
-                            <div className="infoCard">
-                                <h3 className="title">{concertItem.artist.name}</h3>
-                                <p className="scene">{concertItem.location.name ?? 'Nom inconnu'}</p>
-                                <p className="date">{formatDate(concertItem.date)}</p>
-                            </div>
-                        </Link>
+                            <Link 
+                                to={`/artiste/${concertItem.artist.id}`} 
+                                className="carouselCard d-flex align-items-end"
+                                style={{ backgroundImage: `url(https://api.nsfestival2024.online${concertItem.artist.imgUrl})` }}
+                            >
+                                <div className="infoCard">
+                                    <h3 className="title">{concertItem.artist.name}</h3>
+                                    <p className="scene">{concertItem.location.name ?? 'Nom inconnu'}</p>
+                                    <p className="date">{formatDate(concertItem.date)}</p>
+                                </div>
+                            </Link>
+                        </div>
                     ))}
                 </div>
+
+                <button className="carousel-control-prev" type="button" data-bs-target="#carouselArtiste" data-bs-slide="prev">
+                    <span className="carousel-control-prev-icon" aria-hidden="true"></span>
+                    <span className="visually-hidden">Précédent</span>
+                </button>
+                <button className="carousel-control-next" type="button" data-bs-target="#carouselArtiste" data-bs-slide="next">
+                    <span className="carousel-control-next-icon" aria-hidden="true"></span>
+                    <span className="visually-hidden">Suivant</span>
+                </button>
             </div>
+
         </section>
     );
 };
