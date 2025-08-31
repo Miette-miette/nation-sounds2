@@ -1,8 +1,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Afacad:ital,wght@0,400..700;1,400..700&family=Caprasimo&display=swap');
 
-/*
-  VARIABLES GLOBALES
-*/
+/*VARIABLES GLOBALES*/
 
 :root {
   --color-bg: #FFE3B0;
@@ -23,9 +21,7 @@
   --font-body: "Afacad", sans-serif;
 }
 
-/*
-  RESET DE BASE
-*/
+/*RESET DE BASE*/
 
 body {
   background-color: var(--color-bg);
@@ -46,9 +42,7 @@ a:hover {
   color: var(--color-primary);
 }
 
-/*
-  TEXTES
-*/
+/*TEXTES*/
 
 h1, h2, h3 {
   text-align: center;
@@ -78,9 +72,7 @@ p, label {
   margin-bottom: 2px;
 }
 
-/*
-  BOUTONS
-*/
+/*BOUTONS*/
 
 button, .button-style, #heure {
   background-color: var(--color-primary);
@@ -103,9 +95,7 @@ button:hover, .button-style:hover, #heure:hover {
   background-color: var(--color-secondary);
 }
 
-/*
-  BLOCS / CARDS GÉNÉRIQUES
-*/
+/*BLOCS / CARDS GÉNÉRIQUES*/
 
 .card {
   background-color: var(--color-light);
@@ -124,9 +114,7 @@ button:hover, .button-style:hover, #heure:hover {
   color: var(--color-light);
 }
 
-/*
-  ANIMATIONS
-*/
+/*ANIMATIONS*/
 
 @keyframes logoRotation {
   0% { transform: rotate(0); }
@@ -148,9 +136,7 @@ button:hover, .button-style:hover, #heure:hover {
   30% { transform: scale(0.99); }
 }
 
-/*
-  WRAPPERS
-*/
+/* WRAPPERS*/
 
 .wrapper-beige {
     background-color: beige;
@@ -159,6 +145,11 @@ button:hover, .button-style:hover, #heure:hover {
     border-color: #492E34;
     border-radius: 8px;
     filter: drop-shadow(2px 4px 4px #492E34);
+}
+
+.wrapper-text {
+  padding: 4% 20%;
+  text-align: center;
 }
 
 .carouselCard, .progItem {
@@ -179,25 +170,17 @@ button:hover, .button-style:hover, #heure:hover {
     margin-right: 5%; 
 }
 
-/* 
-TITRES DECOS 
-*/
+/* TITRES DECOS */
 
 .decoTitre, .decoTitreShake {
-  width: 50px;
+  width: 40px;
   margin: 20px;
   overflow: hidden;
 }
 .decoTitre { animation: logoRotation 35s linear infinite; }
 .decoTitreShake { animation: logoShake 12s ease-out infinite; }
 
-/* 
-PROGRAMMATION
-*/
-
-/* 
-CONCERT 
-*/ 
+/* CONCERT */ 
 
 .sceneConteneur { 
   width: 480px; 
@@ -233,9 +216,8 @@ CONCERT
   border: solid 2px beige; 
 } 
 
-/*
-PROGRAMMATION
-*/ 
+/*PROGRAMMATION*/ 
+
 #mainProg { padding: 5% 10%; } 
 #progHeader>div>img{ 
   margin: 20px; 

@@ -20,8 +20,14 @@
   border: 3px solid #492E34;
   filter: drop-shadow(2px 2px 2px rgb(136, 108, 72));
 }
+
+.carousel-item.active{
+  background-color: transparent;
+}
+
 .infoCard {
   background: linear-gradient(0deg, rgba(0,0,0,0.7) 40%, transparent 100%);
+  width: 100%;
   padding: 20px;
   color: beige;
 }
