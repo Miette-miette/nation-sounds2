@@ -27,21 +27,35 @@ const LineUp = () => {
 
             <p>Une édition haute en couleurs et en talents internationaux!</p>
 
-            <div>
-                <div className="d-flex flex-row">
-                    {(concert || []).map((concertItem, index) => (
-                        <div key={concertItem.id}>
-                            <Link to={`/artiste/${concertItem.artist.id}`} className="carouselCard d-flex align-items-end" style={{ backgroundImage: `url(${apiURL}${concertItem.artist.imgUrl})` }}>
-                                <div className="infoCard">
-                                    <h3 className="title">{concertItem.artist.name}</h3>
-                                    <p className="scene">{concertItem.location.name ?? 'Nom inconnu'}</p>
-                                    <p className="date">{formatDate(concertItem.date)}</p>
-                                </div>
-                            </Link>
-                        </div>
-                    ))}
+            <div className="carousel slide" data-ride="carousel">
+                <div className="carousel-inner">
+                    <div className="cards-wrapper">
+                        {(concert || []).map((concertItem, index) => (
+                            <div key={concertItem.id} className="carousel-item">
+                                <Link to={`/artiste/${concertItem.artist.id}`} className="d-block w-100" style={{ backgroundImage: `url(${apiURL}${concertItem.artist.imgUrl})` }}>
+                                    <div className="infoCard">
+                                        <h3 className="title">{concertItem.artist.name}</h3>
+                                        <p className="scene">{concertItem.location.name ?? 'Nom inconnu'}</p>
+                                        <p className="date">{formatDate(concertItem.date)}</p>
+                                    </div>
+                                </Link>
+                            </div>
+                        ))}
+                    </div>
+
+                    
                 </div>
+
+                <a class="carousel-control-prev" href="#carouselExampleControls" role="button" data-slide="prev">
+                    <span className="carousel-control-prev-icon" aria-hidden="true"></span>
+                    <span className="sr-only">Previous</span>
+                </a>
+                <a class="carousel-control-next" href="#carouselExampleControls" role="button" data-slide="next">
+                    <span className="carousel-control-next-icon" aria-hidden="true"></span>
+                    <span className="sr-only">Next</span>
+                </a>
             </div>
+
 
         </section>
     );
