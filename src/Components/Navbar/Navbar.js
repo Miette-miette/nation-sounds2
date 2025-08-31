@@ -121,7 +121,7 @@ function Navbar() {
             </Link>
           </li> 
           <li>
-            <Link to='/contact' className="links" onClick={handleShowMenu}>
+            <Link to={`${baseURL}/contact`} className="links" onClick={handleShowMenu}>
               <img src='../../media/doodle/fleur1.png' alt="main qui fait le symbole métal " className="menu-icons"/>
               <p>CONTACT</p>
             </Link>

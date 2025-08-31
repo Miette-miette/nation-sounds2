@@ -27,13 +27,13 @@ function FAQ() {
 
     const faqAccessibilite =[
         {
-            id:1,
+            id:4,
             question:"Y-A-T'IL DES PARKINGS RESERVES AUX PMR?",
             reponse:"Pour accéder au parking PMR, se munir du macaron ou de tout justificatif médical datant de moins d’un mois\
                     à présenter aux bénévoles des parkings qui vous dirigeront alors vers l’espace réservé."
         },
         {
-            id:2,
+            id:5,
             question:"Y-A-T'IL DES ESPACES SPECTACLE DEDIES AUX PMR?",
             reponse:"il suffit de se présenter aux bénévoles avec vos justificatifs et vous serez alors dirigés vers l’espace réservé.\
                     Une personne pourra éventuellement vous accompagner dans cet espace sous réserve de place disponible. A défaut, elle pourra s’installer à proximité."

@@ -5,6 +5,7 @@ const Partenaire = () =>{
     const [partenaire, setPartenaire]= useState([]);
 
     const baseURL = process.env.REACT_APP_BASE_URL;
+    const apiURL = process.env.REACT_APP_API_URL;
     const endpoint = '/api/partner';
 
     useEffect(() => {
@@ -31,7 +32,7 @@ const Partenaire = () =>{
                         .filter((partenaire)=> partenaire.type === "Institution")
                         .map((i)=>
                         <div className="imgPartenaireConteneur  d-flex flex-column flex-lg-row justify-content-center justify-content-md-between align-items-center ">
-                            <img src={`https://api.nsfestival2024.online${i.imgUrl}`}/>
+                            <img src={`${apiURL}${i.imgUrl}`}/>
                             <div className="articleDescription d-flex flex-column justify-content-center">
                                 <h2 className="title">{i.name}</h2>
                                 <p className="description">{i.content}</p>
@@ -50,7 +51,7 @@ const Partenaire = () =>{
                     .filter((partenaire)=> partenaire.type === "Entreprise")
                     .map((e)=>
                         <div className="imgPartenaireConteneur  d-flex flex-column flex-lg-row justify-content-center justify-content-md-between align-items-center ">
-                            <img src={`https://api.nsfestival2024.online${e.imgUrl}`}/>
+                            <img src={`${apiURL}${e.imgUrl}`}/>
                             <div className="articleDescription d-flex flex-column justify-content-center">
                                 <h2 className="title">{e.name}</h2>
                                 <p className="description">{e.content}</p>

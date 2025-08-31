@@ -25,6 +25,7 @@ const Carte = () =>{
 
 
     const baseURL = process.env.REACT_APP_BASE_URL;
+    const apiURL = process.env.REACT_APP_API_URL;
     const endpointMapSettings = '/api/map';
     const endpointMarker = '/api/marker';
 
@@ -32,9 +33,6 @@ const Carte = () =>{
         axios.get(baseURL + endpointMapSettings).then((res)=>setCarte(res.data));
         axios.get(baseURL + endpointMarker).then((res)=>setMarker(res.data));
     },[])
-
-    console.log(carte);
-    console.log(marker);
     
     return(
         <main>
@@ -64,7 +62,7 @@ const Carte = () =>{
                                 <LayerGroup>
                                     {
                                         marker.map((all) =>  
-                                            <Marker key={all.id} position={[all.lat,all.lng]} icon={createIcon(`${baseURL}${all.imgUrl}`)}  eventHandlers={{click: () => setSelectedMarker(all)}}>
+                                            <Marker key={all.id} position={[all.lat,all.lng]} icon={createIcon(`${apiURL}${all.imgUrl}`)}  eventHandlers={{click: () => setSelectedMarker(all)}}>
                                         
                                             </Marker>
                                     )}
@@ -77,7 +75,7 @@ const Carte = () =>{
                                         marker.map((marker) => {
                                             if(marker.type === "scène"){ 
                                                 return(
-                                                    <Marker key={marker.id} position={[marker.lat,marker.lng]} icon={createIcon(`${baseURL}${marker.imgUrl}`)}  eventHandlers={{click: () => setSelectedMarker(marker)}}>
+                                                    <Marker key={marker.id} position={[marker.lat,marker.lng]} icon={createIcon(`${apiURL}${marker.imgUrl}`)}  eventHandlers={{click: () => setSelectedMarker(marker)}}>
                                                     </Marker> 
                                             )}    
                                         })
@@ -91,7 +89,7 @@ const Carte = () =>{
                                         marker.map((marker) => {
                                             if(marker.type === "information"){ 
                                                 return(
-                                                    <Marker key={marker.id} position={[marker.lat,marker.lng]} icon={createIcon(`${baseURL}${marker.imgUrl}`)} eventHandlers={{click: () => setSelectedMarker(marker)}}>
+                                                    <Marker key={marker.id} position={[marker.lat,marker.lng]} icon={createIcon(`${apiURL}${marker.imgUrl}`)} eventHandlers={{click: () => setSelectedMarker(marker)}}>
                                                     </Marker>
                                             )}  
                                         })
@@ -105,7 +103,7 @@ const Carte = () =>{
                                         marker.map((marker) => {
                                             if(marker.type === "restauration"){ 
                                                 return(
-                                                    <Marker key={marker.id} position={[marker.lat,marker.lng]} icon={createIcon(`${baseURL}${marker.imgUrl}`)}  eventHandlers={{click: () => setSelectedMarker(marker)}}>
+                                                    <Marker key={marker.id} position={[marker.lat,marker.lng]} icon={createIcon(`${apiURL}${marker.imgUrl}`)}  eventHandlers={{click: () => setSelectedMarker(marker)}}>
                                                     </Marker>
                                             )}  
                                         })
@@ -119,7 +117,7 @@ const Carte = () =>{
                                         marker.map((marker) => {
                                             if(marker.type === "wc"){ 
                                                 return(
-                                                    <Marker key={marker.id} position={[marker.lat,marker.lng]} icon={createIcon(`${baseURL}${marker.imgUrl}`)}  eventHandlers={{click: () => setSelectedMarker(marker)}}>
+                                                    <Marker key={marker.id} position={[marker.lat,marker.lng]} icon={createIcon(`${apiURL}${marker.imgUrl}`)}  eventHandlers={{click: () => setSelectedMarker(marker)}}>
                                                     </Marker>
                                             )}  
                                         })
@@ -142,7 +140,7 @@ const Carte = () =>{
                                 <p><em>Touchez la carte pour obtenir plus d'informations sur chaque lieu!</em></p>) : (
                                     <div className="mapInfo d-flex flex-column">
                                         <div className="carteInfoImg">
-                                            <img src={`${baseURL}${selectedMarker.infoLocation.imgUrl}`} alt={selectedMarker.name} />
+                                            <img src={`${apiURL}${selectedMarker.infoLocation.imgUrl}`} alt={selectedMarker.name} />
                                         </div>
 
                                     <div className="carteTxt d-flex flex-column justify-content-around align-items-center">

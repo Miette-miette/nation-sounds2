@@ -18,6 +18,7 @@ const days = [
 ];
 
 const baseURL = process.env.REACT_APP_BASE_URL;
+const apiURL = process.env.REACT_APP_API_URL;
 const endpoint  = "/api/event";
 
 // Affichage scènes
@@ -40,7 +41,7 @@ const SceneSection = ({ scene, concerts }) => {
 
       {concerts.map((c) => (
         <Link to={`/artiste/${c.artist.id}`} className="concertItem" key={`${c.artist.name}-${c.begin_time}`}>
-          <img className="src" src={`https://api.nsfestival2024.online${c.artist.imgUrl}`}width="100" height="100" alt={c.artist.name}/>
+          <img className="src" src={`${apiURL}${c.artist.imgUrl}`}width="100" height="100" alt={c.artist.name}/>
           <div>
             <h3 className="title d-flex justify-content-start">{c.artist.name}</h3>
             <p className="heure">{formatTime(c.begin_time)} / {formatTime(c.end_time)}</p>

@@ -21,6 +21,7 @@ const Programmation = () =>{
     }
     
     const baseURL = process.env.REACT_APP_BASE_URL;
+    const apiURL = process.env.REACT_APP_API_URL;
     const endpoint = '/api/event';
 
     useEffect(() => {
@@ -77,9 +78,6 @@ const Programmation = () =>{
         return jourOk && lieuOk && heureOk && typeOk;
         });
     }, [programmation, filters]);
-
-
-        console.log(filteredProg);
         
     // GESTION DES DIFFERENTS STATES
 
@@ -205,24 +203,22 @@ const Programmation = () =>{
                 const sceneName = prog.location.name || "";
                 const sceneIcon = iconScene[sceneName] || "";
                 return (
-                <Link to={`/artiste/${prog.artist.id}`}
-                    key={prog.id}
-                    className="progItem d-flex flex-column"
-                    style={{backgroundImage: `https://api.nsfestival2024.online${prog.artist.imgUrl})`}}>
-                    <div className="conteneurImg d-flex flex-row justify-content-end align-items-start">
-                        <img className="iconScene d-flex justify-content-end align-items-end" src={sceneIcon} alt="icon scène"/>
-                    </div>
+                <Link to={`/artiste/${prog.artist.id}`} key={prog.id} className="progItem d-flex flex-column" style={{backgroundImage: url(`${apiURL}${prog.artist.imgUrl}`)}}>
+                        <div className="conteneurImg d-flex flex-row justify-content-end align-items-start">
+                            <img className="iconScene d-flex justify-content-end align-items-end" src={sceneIcon} alt="icon scène"/>
+                        </div>
 
-                    <div className="progTxt">
-                        <h3 className="title">{prog.artist.name}</h3>
-                        <p className="scene">
-                            Lieu: <strong>{sceneName}</strong>
-                        </p>
-                        <p className="date">
-                            <strong>{formatDate(prog.date)}</strong>
-                        </p>
-                        <p className="heure">{formatTime(prog.begin_time)}</p>
-                    </div>
+                        <div className="progTxt">
+                            <h3 className="title">{prog.artist.name}</h3>
+                            <p className="scene">
+                                Lieu: <strong>{sceneName}</strong>
+                            </p>
+                            <p className="date">
+                                <strong>{formatDate(prog.date)}</strong>
+                            </p>
+                            <p className="heure">{formatTime(prog.begin_time)}</p>
+                        </div>
+                    
                 </Link>
                 );
             })}

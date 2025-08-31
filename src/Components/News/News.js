@@ -7,6 +7,7 @@ const News = () => {
     const [data, setData]= useState([])
 
     const baseURL = process.env.REACT_APP_BASE_URL;
+    const apiURL = process.env.REACT_APP_API_URL;
     const endpoint = '/api/news';
 
     useEffect(() => {
@@ -27,7 +28,7 @@ const News = () => {
                     data.map((article)=>
                         <div className="articleCard card d-flex flex-column" id={article.id} key={article.id}>
                             <div className="articleImg">
-                                <img src={`${baseURL}${article.imgUrl}`}/>
+                                <img src={`${apiURL}${article.imgUrl}`}/>
                             </div>
                             <div className="articleDescription">
                                 <h3 className="title">{article.title}</h3>
