@@ -106,7 +106,7 @@ const LineUp = () => {
             
 
             <div id="carouselLineUp" className="carousel slide w-100" data-bs-ride="carousel">
-                <div className="carousel-inner">
+                <div className="carousel-inner mb-2">
                     {concert.reduce((acc, item, index) => { 
                         if (index % 3 === 0) acc.push([]);
                         acc[acc.length - 1].push(item);
@@ -115,8 +115,8 @@ const LineUp = () => {
                         <div key={id} className={`carousel-item ${id === 0 ? "active" : ""}`}>
                             <div className="d-flex flex-row justify-content-center">
                                 {group.map((concertItem) => (
-                                    <Link to={`/artiste/${concertItem.artist.id}`} key={concertItem.id} style={{backgroundImage: `url(${apiURL}${concertItem.artist.imgUrl})`,backgroundSize: "cover",backgroundPosition: "center"}} className="col-12 col-md-4 d-flex">
-                                        <div className="carouselCard m-2 flex-fill d-flex align-items-end">
+                                    <Link to={`/artiste/${concertItem.artist.id}`} key={concertItem.id} className="col-12 col-md-4 d-flex">
+                                        <div className="carouselCard m-2 flex-fill d-flex align-items-end" style={{backgroundImage: `url(${apiURL}${concertItem.artist.imgUrl})`,backgroundSize: "cover",backgroundPosition: "center"}}>
                                             <div className="infoCard">
                                                 <h3 className="h2">{concertItem.artist.name}</h3>
                                                 <p>{concertItem.location.name ?? 'Nom inconnu'}</p>
