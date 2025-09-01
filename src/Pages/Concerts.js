@@ -33,7 +33,7 @@ const SceneSection = ({ scene, concerts }) => {
   ); 
 
   return (
-    <article className="wrapper-beige d-flex flex-column justify-content-center">
+    <article className="sceneConteneur d-flex flex-column justify-content-center">
       <div className="sceneHeader d-flex flex-row justify-content-center align-items-center">
         <img src={scene.icon} width="80" alt={scene.label} />
         <h2>{scene.label}</h2>
@@ -99,20 +99,18 @@ const Concerts = () => {
     <main>
     
       <div className="page-header d-flex flex-row justify-content-center align-items-center mt-5">
-        <div className="d-flex flex-row justify-content-center align-items-center">
-          <img src="../../media/doodle/cassette.png" className="decoTitreShake" />
-          <h1>Concerts</h1>
-          <img src="../../media/doodle/cassette.png" className="decoTitreShake" />
-        </div>
-        <p>Retrouvez la programmation des concerts par jour</p>
+        <img src="../../media/doodle/cassette.png" className="decoTitreShake" />
+        <h1>Concerts</h1>
+        <img src="../../media/doodle/cassette.png" className="decoTitreShake" />
+      </div>
+      <p>Retrouvez la programmation des concerts par jour</p>
 
-        <div className="sceneBtn d-flex flex-row justify-content-center">
-          {days.map((d) => (
-            <button key={d.date} id={d.date} className={`button-style ms-1 me-1 ${selectedDay === d.date ? "active" : ""}`} onClick={() => setSelectedDay(d.date)}>
-              {d.label}
-            </button>
-          ))}
-        </div>
+      <div className="sceneBtn d-flex flex-row justify-content-center">
+        {days.map((d) => (
+          <button key={d.date} id={d.date} className={`button-style ms-1 me-1 ${selectedDay === d.date ? "active" : ""}`} onClick={() => setSelectedDay(d.date)}>
+            {d.label}
+          </button>
+        ))}
       </div>
 
       <div id="scenes" className="d-flex flex-column flex-md-row flex-wrap justify-content-center align-items-center align-items-md-start">

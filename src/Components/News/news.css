@@ -1,16 +1,15 @@
-/*
-ACCUEIL ARTICLE ACTU
-*/ 
+/* ACCUEIL ARTICLE ACTU */ 
+
 #news { 
     background-color: #E47161; 
-    width: 100%; 
-    padding: 20px 20%; 
+    width: 100%;  
     display: flex; 
     flex-direction: column; 
     align-content: center; 
     filter: drop-shadow(2px 4px 4px #492E34); 
     overflow: hidden; 
 } 
+
 #news>h2{ 
     display: flex; 
     justify-content: center; 

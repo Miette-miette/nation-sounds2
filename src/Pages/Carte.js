@@ -128,7 +128,7 @@ const Carte = () =>{
                         </MapContainer>
                     )}
                     </div>
-                    <button className="button-style h5 p-3" onClick={() => setGeoActive(true)}>   
+                    <button className="button-style h5 p-3 w-100" onClick={() => setGeoActive(true)}>   
                         📍 Me localiser
                     </button>
                 </div>

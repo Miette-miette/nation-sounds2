@@ -103,8 +103,7 @@ const Programmation = () =>{
 
     return(
         <main id="main">
-            <div className="page-header d-flex flex-row justify-content-center align-items-center mt-5">
-                <div className="d-flex flex-row justify-content-center align-items-center">
+            <div className="page-header d-flex flex-row justify-content-center align-items-center mt-10 mt-md-5">
                 <img src="../../media/doodle/etoile.png" className="decoTitre" />
                 <h1>Programmation</h1>
                 <img src="../../media/doodle/etoile.png" className="decoTitre" />
@@ -112,7 +111,6 @@ const Programmation = () =>{
 
             <p>Retrouvez la programmation complète de Nation Sounds Festival !</p>
 
-            {/* FILTRES */}
             <div className="progBtn d-flex flex-column">
                 <div id="filtreTitre" className="d-flex flex-row justify-content-center">
                     <h2>Filtres</h2>
@@ -125,30 +123,18 @@ const Programmation = () =>{
                 <div id="filtreTemporel" className="d-flex flex-column justify-content-center align-items-center">
                     <div className="filtreConteneur flex-column ">
                         <label htmlFor="jour">Jour</label>
-                        <select
-                        id="jour"
-                        name="jour"
-                        className="button-style"
-                        onChange={handleFilterChange}
-                        value={filters.jour}
-                        >
-                        <option value="Tous">Tous</option>
-                        <option value="2024-07-26">Vendredi 26/07</option>
-                        <option value="2024-07-27">Samedi 27/07</option>
-                        <option value="2024-07-28">Dimanche 28/07</option>
+                        <select id="jour" name="jour" className="button-style" onChange={handleFilterChange} value={filters.jour}>
+                            <option value="Tous">Tous</option>
+                            <option value="2024-07-26">Vendredi 26/07</option>
+                            <option value="2024-07-27">Samedi 27/07</option>
+                            <option value="2024-07-28">Dimanche 28/07</option>
                         </select>
                     </div>
 
-                <div className="filtreConteneur flex-column">
-                    <label htmlFor="heure">Horaire (à partir de)</label>
-                    <input
-                    type="time"
-                    name="heure"
-                    id="heure"
-                    value={filters.heure}
-                    onChange={handleFilterChange}
-                    />
-                </div>
+                    <div className="filtreConteneur flex-column">
+                        <label htmlFor="heure">Horaire (à partir de)</label>
+                        <input type="time" name="heure" id="heure" value={filters.heure} onChange={handleFilterChange}/>
+                    </div>
                 </div>
 
                 {/* FILTRES DIVERS */}
@@ -188,7 +174,6 @@ const Programmation = () =>{
                         </select>
                     </div>
                 </div>
-            </div>
             </div>
         </div>
 

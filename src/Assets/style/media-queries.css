@@ -16,49 +16,101 @@ img { max-width: 100%; height: auto; }
 
 @media (max-width: 600px) {
 
-    /* Global */
+   /* Global */
 
-    main, #main { padding: 6% var(--container-pad-mobile); }
-    h1 { font-size: clamp(1.8rem, 6vw, 2.2rem); }
-    h2 { font-size: clamp(1.8rem, 5vw, 1.6rem); }
+   main, #main { padding: 6% var(--container-pad-mobile); }
+   h1 { font-size: clamp(1.8rem, 6vw, 2.2rem); }
+   h2 { font-size: clamp(1.8rem, 5vw, 1.6rem); }
 
-    /* Wrapper */
+   /* Wrapper */
     
 
-    /* Menu */
-    #menuInfo { flex-direction: column; width: 100%; }
-    .visuelMenu { display: none}
-    .header-icons{ width: 50px; height: 50px;}
-    .navbar-header { padding: 5%; }
-    .links>p { font-size: 25px;}
-    .menu-icons { width: 20px ; margin: 2%;}
+   /* Menu */
 
+   #menuInfo { 
+      flex-direction: column; 
+      width: 100%; 
+   }
+   
+   .header-icons{ 
+      width: 50px; 
+      height: 50px;
+   }
+   
+   .menu-icons { 
+      width: 20px ; 
+      margin: 2%;
+   }
+
+   .visuelMenu { display: none}
+   .navbar-header { padding: 5%; }
+   .links>p { font-size: 25px;} 
+
+   /* Footer */
+
+   footer { 
+      padding: 12% 0 6%; 
+      height: 900px; 
+   }
+
+   #logoFooter img { 
+      width: 90px; 
+      height: 90px; 
+   }
+
+   #topFooter{ 
+      width: 100%; 
+      margin-right: 0;
+   } 
+
+   #informationFooter{ width: 200px } 
+
+   /* Accueil */
     
-    /* Footer */
+   #bienvenue { height: 500px; }
+   #btnlanding { width: 70%; font-size: 20px; margin: 20px auto; }
 
-    footer { padding: 12% 0 6%; height: 900px; }
-    #logoFooter img { width: 90px; height: 90px; }
-    #topFooter{ width: 100%; margin-right: 0;} 
-    #informationFooter{ width: 200px } 
+   #billeterie { padding: 10% 8%;}
+   .pass1, .pass2, .pass3 { margin: 5% 5%;}
 
-    /* Accueil */
-    
-    #bienvenue { height: 500px; }
-    #btnlanding { width: 70%; font-size: 20px; margin: 20px auto; }
+   .pass3{ width: 280px; height: 280px;}
+   .pass2,.pass1{ width: 250px; height: 250px;}
 
-    #billeterie { padding: 10% 8%;}
-    .pass1, .pass2, .pass3 { margin: 5% 5%;}
+   #asso {padding: 10% 8%;}
+   #assoTxt>img{ width: 200px; height: 200px; margin: 8%;}
 
-    .pass3{ width: 280px; height: 280px;}
-    .pass2,.pass1{ width: 250px; height: 250px;}
+   /* Programmation */
 
-    #asso {padding: 10% 8%;}
-    #assoTxt>img{ width: 200px; height: 200px; margin: 8%;}
+   .progBtn {
+      position: fixed;
+      bottom: 0;
+      background-color: beige;
+      width: 100%;
+      padding: 4% 10% 10% 10%;
+      border: none;
+      border-top: solid #492E34;
+      z-index: 2;
+      border-radius: 0;
+      margin: 0;
+   }
+   
+   /* Concert */
 
-    /* Carte */
+   .sceneBtn {
+      position: fixed;
+      bottom: 0;
+      background-color: beige;
+      width: 100%;
+      height: 80px;
+      padding: 2%;
+      border-top: solid #492E34;
+      z-index: 2;
+    }
 
-    #map { min-height: 400px; width: 100%; }
-    .aside-map { width: 100%; margin-top: 20px; }
+   /* Carte */
+
+   #map { min-height: 400px; width: 100%; }
+   .aside-map { width: 100%; margin-top: 20px; }
 }
 
 /* 
@@ -67,15 +119,15 @@ img { max-width: 100%; height: auto; }
 
 @media (min-width: 601px) and (max-width: 1024px) {
 
-    /* Global */
-    main, #main { padding: 5% var(--container-pad-tablet); }
+   /* Global */
+   main, #main { padding: 5% var(--container-pad-tablet); }
 
-    /* Menu */
-    #menuInfo ul { padding-left: 5%; }
+   /* Menu */
+   #menuInfo ul { padding-left: 5%; }
     
 
-    /* Carte */
-    #map { width: 55%; }
-    .aside-map { width: 45%; }
+   /* Carte */
+   #map { width: 55%; }
+   .aside-map { width: 45%; }
 }
 

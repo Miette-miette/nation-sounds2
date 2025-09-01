@@ -1,16 +1,9 @@
-/*ACCUEIL AFFICHE*/ 
+/*ACCUEIL LINE UP*/ 
 #affiche{ 
     width: 100%; 
     overflow: hidden; 
 } 
-#carouselArtiste {
-  width: 80%;
-  max-width: 1000px;
-}
-#conteneurCarousel{ 
-    overflow-x:scroll; 
-    scroll-behavior: smooth; 
-} 
+
 .carouselCard {
   background-size: cover;
   background-position: center;
@@ -31,12 +24,14 @@
   padding: 20px;
   color: beige;
 }
+
 .infoCard>h3,.infoCard>p{ 
     color: beige; 
     margin: 0; 
     font-family: "Afacad", sans-serif; 
     font-optical-sizing: auto; 
 } 
+
 .infoCard>h3 { 
     font-family: "Caprasimo", serif; 
     font-weight: 400; 

@@ -33,7 +33,7 @@ const News = () => {
                         <div key={id} className={`carousel-item ${id === 0 ? "active" : ""}`}>
                             <div className="d-flex flex-row justify-content-center">
                                 {group.map((article) => (
-                                    <div className="articleCard card d-flex flex-column" id={article.id} key={article.id}>
+                                    <div className="articleCard card d-flex flex-column col-12 col-md-4" id={article.id} key={article.id}>
                                         <div className="articleImg">
                                             <img src={`${apiURL}${article.imgUrl}`}/>
                                         </div>

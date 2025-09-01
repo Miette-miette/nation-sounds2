@@ -209,6 +209,7 @@ button:hover, .button-style:hover, #heure:hover {
 } 
 
 .concertItem>div>h3,.concertItem>div>p{ color: beige; margin: 0; } 
+
 .concertItem>img{ 
   border-radius: 50%; 
   object-fit: cover; 
@@ -291,9 +292,7 @@ button:hover, .button-style:hover, #heure:hover {
 .date{ color: #E47161!important; font-weight: bold; }
 
 
-/* 
-CARTE
-*/
+/* CARTE */
 
 #map{ 
     width: 60%; 
@@ -370,9 +369,7 @@ CARTE
     margin: 2%; 
 }
 
-/* 
-FAQ 
-*/ 
+/* FAQ  */ 
 
 .faqTopic{ padding: 2% 0; } 
 
@@ -424,9 +421,7 @@ FAQ
   filter: drop-shadow(2px 2px 2px rgb(136, 108, 72)); 
 } 
 
-/*
-PARTENAIRE
-*/ 
+/* PARTENAIRE */ 
 
 .conteneurPartenaire{ 
   display: flex; 
