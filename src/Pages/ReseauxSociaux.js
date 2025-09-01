@@ -1,7 +1,7 @@
 const ReseauxSociaux = () => {
     return(
         <main>
-            <div className="d-flex flex-row justify-content-center align-items-center">
+            <div className="page-header d-flex flex-row justify-content-center align-items-center mt-5">
                 <img src="../../media/doodle/megaphone.png" className="decoTitreShake"/>
                 <h1 className="d-flex justify-content-center">Retrouvez Nation Sounds sur les réseaux!</h1>
                 <img src="../../media/doodle/megaphone.png" className="decoTitreShake"/>

@@ -103,7 +103,7 @@ const Programmation = () =>{
 
     return(
         <main id="main">
-            <div id="progHeader" className="d-flex flex-column justify-content-center align-items-center">
+            <div className="page-header d-flex flex-row justify-content-center align-items-center mt-5">
                 <div className="d-flex flex-row justify-content-center align-items-center">
                 <img src="../../media/doodle/etoile.png" className="decoTitre" />
                 <h1>Programmation</h1>

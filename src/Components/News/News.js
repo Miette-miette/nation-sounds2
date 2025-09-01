@@ -4,7 +4,7 @@ import { Link } from "react-router-dom";
 import './news.css';
 
 const News = () => {
-    const [data, setData]= useState([])
+    const [news, setNews]= useState([])
 
     const baseURL = process.env.REACT_APP_BASE_URL;
     const apiURL = process.env.REACT_APP_API_URL;
@@ -12,10 +12,9 @@ const News = () => {
 
     useEffect(() => {
         axios.get(`${baseURL}${endpoint}`)
-        .then((res)=>setData(res.data))
+        .then((res)=>setNews(res.data))
     },[])
-    console.log(data);
-    
+   
     return (
         <section id="news">
             <div className="d-flex flex-row justify-content-center align-items-center" >
@@ -23,21 +22,39 @@ const News = () => {
                 <h2>Actualités du festival</h2>
                 <img src="../../media/doodle/happyfleur2.png" className="decoTitre"/>
             </div>
-            <div id="articleConteneur" className="d-flex flex-row" /*data-aos="fade-left" data-aos-duration="1000"*/>
-                {
-                    data.map((article)=>
-                        <div className="articleCard card d-flex flex-column" id={article.id} key={article.id}>
-                            <div className="articleImg">
-                                <img src={`${apiURL}${article.imgUrl}`}/>
+
+             <div id="carouselNews" className="carousel slide w-100" data-bs-ride="carousel">
+                <div className="carousel-inner mb-2">
+                    {news.reduce((articles, item, index) => { 
+                        if (index % 3 === 0) articles.push([]);
+                        articles[articles.length - 1].push(item);
+                        return articles;
+                    }, []).map((group, id) => (
+                        <div key={id} className={`carousel-item ${id === 0 ? "active" : ""}`}>
+                            <div className="d-flex flex-row justify-content-center">
+                                {group.map((article) => (
+                                    <div className="articleCard card d-flex flex-column" id={article.id} key={article.id}>
+                                        <div className="articleImg">
+                                            <img src={`${apiURL}${article.imgUrl}`}/>
+                                        </div>
+                                        <div className="articleDescription">
+                                            <h3 className="title">{article.title}</h3>
+                                            <p className="chapeau">{article.summary}</p>
+                                        </div>
+                                        <Link to={`/news/${article.id}`} className="button-style">Lire la suite</Link>
+                                    </div> 
+                                ))}
                             </div>
-                            <div className="articleDescription">
-                                <h3 className="title">{article.title}</h3>
-                                <p className="chapeau">{article.summary}</p>
-                            </div>
-                            <Link to={`/news/${article.id}`} className="button-style">Lire la suite</Link>
-                        </div> 
-                    )
-                }
+                        </div>
+                     ))}
+                </div>
+            
+                <a className="carousel-control-prev" data-bs-target="#carouselNews" role="button" data-bs-slide="prev">
+                    <span className="carousel-control-prev-icon" aria-hidden="true"></span>
+                </a>
+                <a className="carousel-control-next" data-bs-target="#carouselNews" role="button" data-bs-slide="next">
+                    <span className="carousel-control-next-icon" aria-hidden="true"></span>
+                </a>
             </div>
 
         </section>

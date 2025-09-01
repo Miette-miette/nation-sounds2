@@ -33,7 +33,7 @@ const SceneSection = ({ scene, concerts }) => {
   ); 
 
   return (
-    <article className="sceneConteneur d-flex flex-column justify-content-center">
+    <article className="wrapper-beige d-flex flex-column justify-content-center">
       <div className="sceneHeader d-flex flex-row justify-content-center align-items-center">
         <img src={scene.icon} width="80" alt={scene.label} />
         <h2>{scene.label}</h2>
@@ -98,7 +98,7 @@ const Concerts = () => {
   return (
     <main>
     
-      <div id="concertHeader" className="d-flex flex-column justify-content-center align-items-center">
+      <div className="page-header d-flex flex-row justify-content-center align-items-center mt-5">
         <div className="d-flex flex-row justify-content-center align-items-center">
           <img src="../../media/doodle/cassette.png" className="decoTitreShake" />
           <h1>Concerts</h1>

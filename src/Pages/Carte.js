@@ -36,104 +36,104 @@ const Carte = () =>{
     
     return(
         <main>
-            <div className="d-flex flex-row justify-content-center align-items-center">
+            <div className="page-header d-flex flex-row justify-content-center align-items-center mt-5">
                 <img src="../../media/doodle/forme-organique1.png" className="decoTitre"/>
                 <h1>Carte du festival</h1>
                 <img src="../../media/doodle/forme-organique1.png" className="decoTitre"/>
             </div>
             
             <div id="conteneurCarte" className="d-flex flex-column flex-md-row ">
-                
-                <div id="map" className="col-12 col-md-8">
-                    {
-                        carte.map((carte)=>
-                         
-                    <MapContainer center={[carte.lat, carte.lng]} zoom={15} scrollWheelZoom={true}>
-                        <TileLayer
-                            attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
-                            url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
-                        />
+                <div className="col-12 col-md-8">
+                    <div id="map" >
+                        {
+                            carte.map((carte)=>
+                            
+                        <MapContainer center={[carte.lat, carte.lng]} zoom={15} scrollWheelZoom={true}>
+                            <TileLayer
+                                attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
+                                url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
+                            />
+                            
+                            <LocationMarker position="bottomright" active={geoActive} />
                         
-                        <LocationMarker position="bottomright" active={geoActive} />
-                       
-                        <LayersControl position="topright">
+                            <LayersControl position="topright">
 
-                            <LayersControl.Overlay checked name="Tous"> 
-                                <LayerGroup>
-                                    {
-                                        marker.map((all) =>  
-                                            <Marker key={all.id} position={[all.lat,all.lng]} icon={createIcon(`${apiURL}${all.imgUrl}`)}  eventHandlers={{click: () => setSelectedMarker(all)}}>
+                                <LayersControl.Overlay checked name="Tous"> 
+                                    <LayerGroup>
+                                        {
+                                            marker.map((all) =>  
+                                                <Marker key={all.id} position={[all.lat,all.lng]} icon={createIcon(`${apiURL}${all.imgUrl}`)}  eventHandlers={{click: () => setSelectedMarker(all)}}>
+                                            
+                                                </Marker>
+                                        )}
+                                    </LayerGroup>   
+                                </LayersControl.Overlay>
                                         
-                                            </Marker>
-                                    )}
-                                </LayerGroup>   
-                            </LayersControl.Overlay>
-                                    
-                            <LayersControl.Overlay name="Scènes">
-                                <LayerGroup>
-                                    {  
-                                        marker.map((marker) => {
-                                            if(marker.type === "scène"){ 
-                                                return(
-                                                    <Marker key={marker.id} position={[marker.lat,marker.lng]} icon={createIcon(`${apiURL}${marker.imgUrl}`)}  eventHandlers={{click: () => setSelectedMarker(marker)}}>
-                                                    </Marker> 
-                                            )}    
-                                        })
-                                    }
-                                </LayerGroup>
-                            </LayersControl.Overlay>
+                                <LayersControl.Overlay name="Scènes">
+                                    <LayerGroup>
+                                        {  
+                                            marker.map((marker) => {
+                                                if(marker.type === "scène"){ 
+                                                    return(
+                                                        <Marker key={marker.id} position={[marker.lat,marker.lng]} icon={createIcon(`${apiURL}${marker.imgUrl}`)}  eventHandlers={{click: () => setSelectedMarker(marker)}}>
+                                                        </Marker> 
+                                                )}    
+                                            })
+                                        }
+                                    </LayerGroup>
+                                </LayersControl.Overlay>
 
-                            <LayersControl.Overlay name="Point d'informations">
-                                <LayerGroup>
-                                    {  
-                                        marker.map((marker) => {
-                                            if(marker.type === "information"){ 
-                                                return(
-                                                    <Marker key={marker.id} position={[marker.lat,marker.lng]} icon={createIcon(`${apiURL}${marker.imgUrl}`)} eventHandlers={{click: () => setSelectedMarker(marker)}}>
-                                                    </Marker>
-                                            )}  
-                                        })
-                                    }
-                                </LayerGroup>
-                            </LayersControl.Overlay>
+                                <LayersControl.Overlay name="Point d'informations">
+                                    <LayerGroup>
+                                        {  
+                                            marker.map((marker) => {
+                                                if(marker.type === "information"){ 
+                                                    return(
+                                                        <Marker key={marker.id} position={[marker.lat,marker.lng]} icon={createIcon(`${apiURL}${marker.imgUrl}`)} eventHandlers={{click: () => setSelectedMarker(marker)}}>
+                                                        </Marker>
+                                                )}  
+                                            })
+                                        }
+                                    </LayerGroup>
+                                </LayersControl.Overlay>
 
-                            <LayersControl.Overlay name="Restauration">
-                                <LayerGroup>
-                                    {  
-                                        marker.map((marker) => {
-                                            if(marker.type === "restauration"){ 
-                                                return(
-                                                    <Marker key={marker.id} position={[marker.lat,marker.lng]} icon={createIcon(`${apiURL}${marker.imgUrl}`)}  eventHandlers={{click: () => setSelectedMarker(marker)}}>
-                                                    </Marker>
-                                            )}  
-                                        })
-                                    }
-                                </LayerGroup>
-                            </LayersControl.Overlay>
+                                <LayersControl.Overlay name="Restauration">
+                                    <LayerGroup>
+                                        {  
+                                            marker.map((marker) => {
+                                                if(marker.type === "restauration"){ 
+                                                    return(
+                                                        <Marker key={marker.id} position={[marker.lat,marker.lng]} icon={createIcon(`${apiURL}${marker.imgUrl}`)}  eventHandlers={{click: () => setSelectedMarker(marker)}}>
+                                                        </Marker>
+                                                )}  
+                                            })
+                                        }
+                                    </LayerGroup>
+                                </LayersControl.Overlay>
 
-                            <LayersControl.Overlay name="WC">
-                                <LayerGroup>
-                                    {  
-                                        marker.map((marker) => {
-                                            if(marker.type === "wc"){ 
-                                                return(
-                                                    <Marker key={marker.id} position={[marker.lat,marker.lng]} icon={createIcon(`${apiURL}${marker.imgUrl}`)}  eventHandlers={{click: () => setSelectedMarker(marker)}}>
-                                                    </Marker>
-                                            )}  
-                                        })
-                                    }
-                                </LayerGroup>
-                            </LayersControl.Overlay>
-                        </LayersControl>
-                    </MapContainer>
-                   )}
-                   
+                                <LayersControl.Overlay name="WC">
+                                    <LayerGroup>
+                                        {  
+                                            marker.map((marker) => {
+                                                if(marker.type === "wc"){ 
+                                                    return(
+                                                        <Marker key={marker.id} position={[marker.lat,marker.lng]} icon={createIcon(`${apiURL}${marker.imgUrl}`)}  eventHandlers={{click: () => setSelectedMarker(marker)}}>
+                                                        </Marker>
+                                                )}  
+                                            })
+                                        }
+                                    </LayerGroup>
+                                </LayersControl.Overlay>
+                            </LayersControl>
+                        </MapContainer>
+                    )}
+                    </div>
+                    <button className="button-style h5 p-3" onClick={() => setGeoActive(true)}>   
+                        📍 Me localiser
+                    </button>
                 </div>
 
-                <div className="aside-map col-12 col-md-8">
-                        <button className="button-style h5 p-3" onClick={() => setGeoActive(true)}>
-                            📍 Me localiser
-                        </button>
+                <div className="aside-map">
 
                         <div id="conteneurInformations">
                             {!selectedMarker ? (

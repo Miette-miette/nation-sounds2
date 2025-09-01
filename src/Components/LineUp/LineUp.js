@@ -21,31 +21,31 @@ const LineUp = () => {
                     setConcert([
                         {
                             id: 1,
-                            artist: { id: 101, name: "Luna Waves", imgUrl: "/media/test/concert1.jpg" },
+                            artist: { id: 101, name: "Luna Waves" },
                             location: { name: "Grande Scène" },
                             date: "2025-09-10T21:00:00"
                         },
                         {
                             id: 2,
-                            artist: { id: 102, name: "ElectroFox", imgUrl: "/media/test/concert2.jpg" },
+                            artist: { id: 102, name: "ElectroFox"},
                             location: { name: "Scène Électro" },
                             date: "2025-09-11T19:00:00"
                         },
                         {
                             id: 3,
-                            artist: { id: 103, name: "The Frog Band", imgUrl: "/media/test/concert3.jpg" },
+                            artist: { id: 103, name: "The Frog Band"},
                             location: { name: "Petite Scène" },
                             date: "2025-09-12T18:00:00"
                         },
                         {
                             id: 4,
-                            artist: { id: 104, name: "Miette & The Crumbs", imgUrl: "/media/test/concert4.jpg" },
+                            artist: { id: 104, name: "Miette & The Crumbs"},
                             location: { name: "Grande Scène" },
                             date: "2025-09-13T22:00:00"
                         },
                         {
                             id: 5,
-                            artist: { id: 105, name: "Slime Symphony", imgUrl: "/media/test/concert5.jpg" },
+                            artist: { id: 105, name: "Slime Symphony"},
                             location: { name: "Scène Harmonique" },
                             date: "2025-09-14T20:00:00"
                         },
@@ -53,41 +53,7 @@ const LineUp = () => {
                 }
             })
             .catch((error) => {
-                console.error("Erreur API :", error);
-                // fallback en cas d'erreur API
-                setConcert([
-                    {
-                        id: 1,
-                        artist: { id: 101, name: "Luna Waves", imgUrl: "/media/test/concert1.jpg" },
-                        location: { name: "Grande Scène" },
-                        date: "2025-09-10T21:00:00"
-                    },
-                    {
-                        id: 2,
-                        artist: { id: 102, name: "ElectroFox", imgUrl: "/media/test/concert2.jpg" },
-                        location: { name: "Scène Électro" },
-                        date: "2025-09-11T19:00:00"
-                    },
-                    {
-                        id: 3,
-                        artist: { id: 103, name: "The Frog Band", imgUrl: "/media/test/concert3.jpg" },
-                        location: { name: "Petite Scène" },
-                        date: "2025-09-12T18:00:00"
-                    },
-                    {
-                            id: 4,
-                            artist: { id: 104, name: "Miette & The Crumbs", imgUrl: "/media/test/concert4.jpg" },
-                            location: { name: "Grande Scène" },
-                            date: "2025-09-13T22:00:00"
-                        },
-                        {
-                            id: 5,
-                            artist: { id: 105, name: "Slime Symphony", imgUrl: "/media/test/concert5.jpg" },
-                            location: { name: "Scène Harmonique" },
-                            date: "2025-09-14T20:00:00"
-                        },
-
-                ]);
+                console.error("Erreur API :", error);        
             });
     }, []);
 
@@ -101,10 +67,7 @@ const LineUp = () => {
                 </div>
                 <p>Une édition haute en couleurs et en talents internationaux!</p>
             </div>
-            
-
-            
-
+        
             <div id="carouselLineUp" className="carousel slide w-100" data-bs-ride="carousel">
                 <div className="carousel-inner mb-2">
                     {concert.reduce((acc, item, index) => { 
