@@ -9,15 +9,16 @@ const Programmation = () =>{
 
     const [loading, setLoading] = useState(true);
     const [error, setError] = useState(null);
-    const [programmation, setProgrammation]= useState([])
+    const [programmation, setProgrammation]= useState([]);
+    const [isOpen, setIsOpen] = useState(false);
 
     const iconScene ={
         "Euphorie":"../../media/scene/euphorie.png",
         "Fusion":"../../media/scene/fusion.png",
-        "Reverie":"../../media/scene/fusion.png",
+        "Rêverie":"../../media/scene/reverie.png",
         "Patio":"../../media/scene/le patio.png",
         "Prisme":"../../media/scene/prisme.png",
-        "Resonance":"../../media/scene/resonance.png",
+        "Résonance":"../../media/scene/resonance.png",
     }
     
     const baseURL = process.env.REACT_APP_BASE_URL;
@@ -51,9 +52,7 @@ const Programmation = () =>{
         setFilters((prevFilters) => ({
             ...prevFilters,
             [name]: value,
-        }))}
-    console.log(filters);
-    
+        }))}    
 
     const filteredProg = useMemo(() => {
         return programmation.filter((prog) => {
@@ -111,10 +110,14 @@ const Programmation = () =>{
 
             <p>Retrouvez la programmation complète de Nation Sounds Festival !</p>
 
-            <div className="progBtn d-flex flex-column">
-                <div id="filtreTitre" className="d-flex flex-row justify-content-center">
+            <button className="drawer-toggle button-style" onClick={() => setIsOpen(!isOpen)}>
+                {isOpen ? "Fermer les filtres" : " Ouvrir les filtres"}
+            </button>
+
+            <div className={`wrapper-beige d-flex flex-column filterDrawer ${isOpen ? "open" : ""}`}>
+                <div id="filtreTitre" className="d-flex flex-row justify-content-between justify-content-md-center">
                     <h2>Filtres</h2>
-                    <img src="../../media/icon/suivant.png" alt="flèche d'interaction" className="voirPlus d-flex d-md-none"/>
+                    <button className="d-block d-sm-none" onClick={() => setIsOpen(!isOpen)}>Fermer</button>
                 </div>
 
             <div id="filtreBtn" className="d-flex flex-column flex-md-row flex-md-wrap justify-content-center justify-content-md-around align-items-center">

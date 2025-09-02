@@ -6,7 +6,7 @@ import { formatTime } from "../utils/date";
 const scene = [
   { key: "Euphorie",  label: "EUPHORIE",  icon: "../../media/scene/euphorie.png" },
   { key: "Fusion",    label: "FUSION",    icon: "../../media/scene/fusion.png" },
-  { key: "Reverie",   label: "REVERIE",   icon: "../../media/scene/reverie.png" },
+  { key: "Rêverie",   label: "REVERIE",   icon: "../../media/scene/reverie.png" },
   { key: "Resonance", label: "RESONANCE", icon: "../../media/scene/resonance.png" },
   { key: "Prisme",    label: "PRISME",    icon: "../../media/scene/prisme.png" },
 ];
@@ -57,6 +57,7 @@ const Concerts = () => {
   const [selectedDay, setSelectedDay] = useState(days[0].date);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
+  const [isOpen, setIsOpen] = useState(false);
 
   useEffect(() => {
       axios.get(`${baseURL}${endpoint}`)
@@ -78,7 +79,7 @@ const Concerts = () => {
   
   if (loading) {
     return (
-      <main id="main" className="d-flex justify-content-center align-items-center" style={{ minHeight: "60vh" }}>
+      <main id="main" className="d-flex justify-content-center align-items-center">
         <div className="spinner" />
       </main>
     );
@@ -105,14 +106,18 @@ const Concerts = () => {
       </div>
       <p>Retrouvez la programmation des concerts par jour</p>
 
-      <div className="sceneBtn d-flex flex-row justify-content-center">
+      <button className="drawer-toggle button-style" onClick={() => setIsOpen(!isOpen)}>
+        {isOpen ? "Fermer les filtres" : " Ouvrir les filtres"}
+      </button>
+
+      <div className={`d-flex flex-row justify-content-center filterDrawer ${isOpen ? "open" : ""}`}>
         {days.map((d) => (
-          <button key={d.date} id={d.date} className={`button-style ms-1 me-1 ${selectedDay === d.date ? "active" : ""}`} onClick={() => setSelectedDay(d.date)}>
+          <button key={d.date} id={d.date} className={`button-style ms-1 me-1 ${selectedDay === d.date ? "active" : ""}`} onClick={() => {setSelectedDay(d.date); setIsOpen(false);}}>
             {d.label}
           </button>
         ))}
       </div>
-
+      
       <div id="scenes" className="d-flex flex-column flex-md-row flex-wrap justify-content-center align-items-center align-items-md-start">
         {scene.map((scene) => {
           const concertsForScene = concertsByDay.filter((c) => c.location.name.includes(scene.key));

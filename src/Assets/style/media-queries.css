@@ -1,6 +1,4 @@
-/*
-   Variables & règles communes
-*/
+/* Variables & règles communes */
 
 :root {
   --container-pad-desktop: 20%;
@@ -10,9 +8,7 @@
 
 img { max-width: 100%; height: auto; }
 
-/* 
-   MOBILE (<=600px)
-*/
+/* MOBILE (<=600px) */
 
 @media (max-width: 600px) {
 
@@ -79,11 +75,12 @@ img { max-width: 100%; height: auto; }
    #asso {padding: 10% 8%;}
    #assoTxt>img{ width: 200px; height: 200px; margin: 8%;}
 
-   /* Programmation */
+   /* FILTRES CONCERT ET PROG */
 
-   .progBtn {
+   .progBtn, .sceneBtn  {
       position: fixed;
-      bottom: 0;
+      height: 100px;
+      left: 0;
       background-color: beige;
       width: 100%;
       padding: 4% 10% 10% 10%;
@@ -93,19 +90,37 @@ img { max-width: 100%; height: auto; }
       border-radius: 0;
       margin: 0;
    }
-   
-   /* Concert */
 
-   .sceneBtn {
+   .drawer-toggle {
+      display: block;
       position: fixed;
-      bottom: 0;
-      background-color: beige;
+      bottom: 100px;
+      left: 20%;
+      transform: translateX(-50%);
+      z-index:100;
+   }
+
+   .filterDrawer {
+      position: fixed;
+      bottom: -100%;
+      left: 0;
       width: 100%;
-      height: 80px;
-      padding: 2%;
+      background-color: beige;
       border-top: solid #492E34;
-      z-index: 2;
-    }
+      transition: bottom 0.3s ease-in-out;
+      z-index: 1000;
+      padding: 1rem;
+   }
+
+   .filterDrawer.open {
+      bottom: 0;
+   }
+
+   /* CONCERT */
+
+   .sceneConteneur {
+      width: 100%;
+   }
 
    /* Carte */
 
@@ -113,9 +128,7 @@ img { max-width: 100%; height: auto; }
    .aside-map { width: 100%; margin-top: 20px; }
 }
 
-/* 
-   TABLETTE (601px–1024px)
-*/
+/* TABLETTE (601px–1024px) */
 
 @media (min-width: 601px) and (max-width: 1024px) {
 
@@ -125,7 +138,6 @@ img { max-width: 100%; height: auto; }
    /* Menu */
    #menuInfo ul { padding-left: 5%; }
     
-
    /* Carte */
    #map { width: 55%; }
    .aside-map { width: 45%; }

@@ -64,7 +64,7 @@ function FAQ() {
 
     return (
         <section id="main">
-            <div className="d-flex flex-row justify-content-center align-items-center mt-5">
+            <div className="page-header d-flex flex-row justify-content-center align-items-center mt-5">
                 <img src="../media/doodle/forme-organique2.png" className="decoTitre" />
                 <h1 className="d-flex justify-content-center">Foire aux questions</h1>
                 <img src="../media/doodle/forme-organique2.png" className="decoTitre" />
