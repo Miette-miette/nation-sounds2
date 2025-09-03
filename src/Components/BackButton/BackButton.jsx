@@ -12,7 +12,7 @@ const BackButton = () => {
     };
 
     return (
-        <button onClick={handleBack} className="link-orange">
+        <button onClick={handleBack} className="link-orange page-header">
         ← Revenir à la page précédente
         </button>
     );

@@ -18,7 +18,7 @@ const Partenaire = () =>{
     
     return(
         <main>
-            <div className="page-header d-flex flex-row justify-content-center align-items-center mt-5">
+            <div className="page-header d-flex flex-row justify-content-center align-items-center">
                 <img src="../../media/doodle/metal.png" className="decoTitreShake"/>
                 <h1>Nos partenaires</h1>
                 <img src="../../media/doodle/metal.png" className="decoTitreShake"/>

@@ -43,7 +43,7 @@ const Carte = () =>{
             </div>
             
             <div id="conteneurCarte" className="d-flex flex-column flex-md-row ">
-                <div className="col-12 col-md-8">
+                <div id="main-map" className="col-12 col-md-8">
                     <div id="map" >
                         {
                             carte.map((carte)=>

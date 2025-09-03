@@ -137,9 +137,5 @@ img { max-width: 100%; height: auto; }
 
    /* Menu */
    #menuInfo ul { padding-left: 5%; }
-    
-   /* Carte */
-   #map { width: 55%; }
-   .aside-map { width: 45%; }
 }
 

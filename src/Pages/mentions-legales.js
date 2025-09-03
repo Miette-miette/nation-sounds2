@@ -1,7 +1,7 @@
 const MentionsLegales = () => {
 
     return(
-        <main className="mt-5">
+        <main className="page-header">
             <h1>Mentions Légales</h1>
             <p>Dernière mise à jour : 16/01/25</p>
 
