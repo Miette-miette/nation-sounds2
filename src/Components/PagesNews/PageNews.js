@@ -27,8 +27,8 @@ const PageNews = () => {
 
             <BackButton/>
            
-            <section className="d-flex flex-column-reverse md-flex-row justify-content-center wrapper-beige artist-info m-5">
-                <div className="artist-button d-flex flex-column ">
+            <section className="d-flex flex-column justify-content-center wrapper-beige artist-info m-5">
+                <div className="article-img d-flex flex-column ">
                     <img src={`https://api.nsfestival2024.online${news.imgUrl}`} alt={news.title} height="200"/>  
                 </div> 
                 

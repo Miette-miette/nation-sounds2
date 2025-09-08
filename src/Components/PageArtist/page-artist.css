@@ -1,6 +1,8 @@
 .artist-info>div>img{
     border-radius: 50%;
     object-fit: cover;
+    width: 200px;
+    height: 200px;
 }
 
 .artist-info>div>h1{

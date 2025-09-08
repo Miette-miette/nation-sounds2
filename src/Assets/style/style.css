@@ -72,6 +72,15 @@ p, label {
   margin-bottom: 2px;
 }
 
+.text-header {
+    color: var(--color-text);
+    font-size: 18px;
+    margin: 2%;
+    position: relative;
+    z-index: 4;
+    text-align: center;
+}
+
 /*BOUTONS*/
 
 button, .button-style, #heure {
@@ -171,7 +180,12 @@ button:hover, .button-style:hover, #heure:hover {
 }
 
 .page-header{
-  margin-top: 20%;
+  margin-top: 15%;
+}
+
+.filter-drawer {
+  width: 75%;
+  justify-content: center;
 }
 
 /* TITRES DECOS */

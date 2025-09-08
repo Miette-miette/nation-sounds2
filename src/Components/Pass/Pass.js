@@ -1,4 +1,5 @@
 import './pass.css';
+import { motion } from "motion/react";
 
 function Pass(){
 
@@ -12,10 +13,17 @@ function Pass(){
 
             <div /*data-aos="fade-up" data-aos-duration="1000"*/>
                 <div id="passConteneur" className="d-flex flex-column flex-md-row justify-content-center align-items-center">
-                    <a href="https://www.ticketmaster.fr/fr" target="_blank" rel="noreferrer" className="pass3 d-flex flex-column" >
+                    <motion.a 
+                        initial={{ opacity: 0, scale: 0 }} 
+                        animate={{ opacity: 1, scale: 1 }} 
+                        transition={{duration: 0.4, scale: { type: "spring", visualDuration: 0.4, bounce: 0.5 }}}
+                        href="https://www.ticketmaster.fr/fr" 
+                        target="_blank" rel="noreferrer" 
+                        className="pass3 d-flex flex-column">
                         <h3>PASS 3 jours</h3>
                         <p>80 &euro;</p>
-                    </a>
+                    </motion.a>
+
                     <a href="https://www.ticketmaster.fr/fr" target="_blank" rel="noreferrer" className="pass2 d-flex flex-column" >
                         <h3>PASS 2 jours</h3>
                         <p>50 &euro;</p>

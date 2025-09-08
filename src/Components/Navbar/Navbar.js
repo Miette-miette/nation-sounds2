@@ -45,7 +45,7 @@ function Navbar() {
 
       <div className={`navbar-login ${showLogin ? "show-login" : "hide"}`}>
         
-        <div className="d-flex flex-column flex-md-row">
+        <div className="d-flex flex-column flex-md-row justify-content-center">
           <div className="visuelMenu">
             <img src='../../media/doodle/happyfleur2.png' alt="mascotte Nation Sound" className="mascotteMenu"/>
             <img src='../../media/doodle/paysage1.png' alt="paysage" className="bgMascotteMenu"/>

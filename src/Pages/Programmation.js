@@ -101,14 +101,14 @@ const Programmation = () =>{
 
 
     return(
-        <main id="main">
+        <main id="main" className="d-flex flex-column align-items-center">
             <div className="page-header d-flex flex-row justify-content-center align-items-center">
                 <img src="../../media/doodle/etoile.png" className="decoTitre" />
                 <h1>Programmation</h1>
                 <img src="../../media/doodle/etoile.png" className="decoTitre" />
             </div>
 
-            <p>Retrouvez la programmation complète de Nation Sounds Festival !</p>
+            <p className="text-header">Retrouvez la programmation complète de Nation Sounds Festival !</p>
 
             <button className="drawer-toggle button-style" onClick={() => setIsOpen(!isOpen)}>
                 {isOpen ? "Fermer les filtres" : " Ouvrir les filtres"}
