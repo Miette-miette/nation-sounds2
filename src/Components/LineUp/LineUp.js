@@ -3,6 +3,7 @@ import { Link } from "react-router-dom";
 import axios from "axios";
 import { formatDate } from "../../utils/date";
 import './lineup.css';
+import { motion } from "motion/react";
 
 const LineUp = () => {
     const [concert, setConcert] = useState([]);
@@ -77,8 +78,14 @@ const LineUp = () => {
                     }, []).map((group, id) => (
                         <div key={id} className={`carousel-item ${id === 0 ? "active" : ""}`}>
                             <div className="d-flex flex-row justify-content-center">
-                                {group.map((concertItem) => (
-                                    <Link to={`/artiste/${concertItem.artist.id}`} key={concertItem.id} className="col-12 col-md-4 d-flex">
+                                {group.map((concertItem, index) => (
+                                    <motion.Link 
+                                        to={`/artiste/${concertItem.artist.id}`} 
+                                        key={concertItem.id} 
+                                        className="col-12 col-md-4 d-flex"
+                                        initial={{ opacity: 0, scale: 0.5 }}
+                                        whileInView={{ opacity: 1, scale: 1 }}
+                                        transition={{duration: 0.8, delay: index * 0.2, ease: [0, 0.71, 0.2, 1.01]}}>
                                         <div className="carouselCard m-2 flex-fill d-flex align-items-end" style={{backgroundImage: `url(${apiURL}${concertItem.artist.imgUrl})`,backgroundSize: "cover",backgroundPosition: "center"}}>
                                             <div className="infoCard">
                                                 <h3 className="h2">{concertItem.artist.name}</h3>
@@ -86,7 +93,7 @@ const LineUp = () => {
                                                 <p>{formatDate(concertItem.date)}</p>
                                             </div>
                                         </div>
-                                    </Link>
+                                    </motion.Link>
                                 ))}
                             </div>
                         </div>

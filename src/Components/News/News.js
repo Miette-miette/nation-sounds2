@@ -33,7 +33,7 @@ const News = () => {
                     }, []).map((group, id) => (
                         <div key={id} className={`carousel-item ${id === 0 ? "active" : ""}`}>
                             <div className="d-flex flex-row justify-content-center">
-                                {group.map((article) => (
+                                {group.map((article, index) => (
                                     <motion.div 
                                         className="articleCard card d-flex flex-column col-12 col-md-4" 
                                         id={article.id} 
