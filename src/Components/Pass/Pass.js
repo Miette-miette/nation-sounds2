@@ -11,11 +11,15 @@ function Pass(){
                 <img src="../../media/doodle/metal.png" className="decoTitreShake"/>
             </div>
 
-            <div /*data-aos="fade-up" data-aos-duration="1000"*/>
+            <div>
                 <div id="passConteneur" className="d-flex flex-column flex-md-row justify-content-center align-items-center">
                     <motion.a 
                         initial={{ opacity: 0, scale: 0 }} 
-                        animate={{ opacity: 1, scale: 1 }} 
+                        whileInView={{ opacity: 1, scale: 1 }} 
+                        whileHover={{
+                            scale: [null, 1.2],
+                            transition: { duration: 0.5, times: [0, 1], ease: ["easeInOut", "easeOut"],},
+                        }}
                         transition={{duration: 0.4, scale: { type: "spring", visualDuration: 0.4, bounce: 0.5 }}}
                         href="https://www.ticketmaster.fr/fr" 
                         target="_blank" rel="noreferrer" 
@@ -24,14 +28,35 @@ function Pass(){
                         <p>80 &euro;</p>
                     </motion.a>
 
-                    <a href="https://www.ticketmaster.fr/fr" target="_blank" rel="noreferrer" className="pass2 d-flex flex-column" >
+                    <motion.a 
+                        initial={{ opacity: 0, scale: 0 }} 
+                        whileInView={{ opacity: 1, scale: 1 }} 
+                        whileHover={{
+                            scale: [null, 1.2],
+                            transition: { duration: 0.5, times: [0, 1], ease: ["easeInOut", "easeOut"],},
+                        }}
+                        transition={{duration: 0.6, scale: { type: "spring", visualDuration: 0.6, bounce: 0.5 }}}
+                        href="https://www.ticketmaster.fr/fr" 
+                        target="_blank" rel="noreferrer" 
+                        className="pass2 d-flex flex-column">
                         <h3>PASS 2 jours</h3>
                         <p>50 &euro;</p>
-                    </a>
-                    <a href="https://www.ticketmaster.fr/fr" target="_blank" rel="noreferrer" className="pass1 d-flex flex-column" >
+                    </motion.a>
+                    
+                    <motion.a 
+                        initial={{ opacity: 0, scale: 0 }} 
+                        whileInView={{ opacity: 1, scale: 1 }} 
+                        whileHover={{
+                            scale: [null, 1.2],
+                            transition: { duration: 0.5, times: [0, 1], ease: ["easeInOut", "easeOut"],},
+                        }}
+                        transition={{duration: 0.8, scale: { type: "spring", visualDuration: 0.8, bounce: 0.5 }}}
+                        href="https://www.ticketmaster.fr/fr" 
+                        target="_blank" rel="noreferrer" 
+                        className="pass1 d-flex flex-column">
                         <h3>Billet 1 jour</h3>
                         <p>30 &euro;</p>
-                    </a>
+                    </motion.a>
                 </div>
             </div>
         </section>

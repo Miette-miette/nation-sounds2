@@ -2,6 +2,7 @@ import React, { useEffect, useState } from "react";
 import axios from "axios";
 import { Link } from "react-router-dom";
 import './news.css';
+import { motion } from "motion/react";
 
 const News = () => {
     const [news, setNews]= useState([])
@@ -33,7 +34,13 @@ const News = () => {
                         <div key={id} className={`carousel-item ${id === 0 ? "active" : ""}`}>
                             <div className="d-flex flex-row justify-content-center">
                                 {group.map((article) => (
-                                    <div className="articleCard card d-flex flex-column col-12 col-md-4" id={article.id} key={article.id}>
+                                    <motion.div 
+                                        className="articleCard card d-flex flex-column col-12 col-md-4" 
+                                        id={article.id} 
+                                        key={article.id}
+                                        initial={{ opacity: 0, scale: 0.5 }}
+                                        whileInView={{ opacity: 1, scale: 1 }}
+                                        transition={{duration: 0.8, delay: index * 0.2, ease: [0, 0.71, 0.2, 1.01]}}>
                                         <div className="articleImg">
                                             <img src={`${apiURL}${article.imgUrl}`}/>
                                         </div>
@@ -42,7 +49,7 @@ const News = () => {
                                             <p className="chapeau">{article.summary}</p>
                                         </div>
                                         <Link to={`/news/${article.id}`} className="button-style">Lire la suite</Link>
-                                    </div> 
+                                    </motion.div> 
                                 ))}
                             </div>
                         </div>

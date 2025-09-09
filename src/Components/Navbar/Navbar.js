@@ -1,7 +1,11 @@
 import { Link } from "react-router-dom";
 import './navbar.css';
-import React, { Component, useState } from 'react';
+import { useState } from 'react';
 import { useAuth } from "../../contexts/AuthContext";
+import { MenuToggle } from "../MenuToggle/MenuToggle";
+import { LoginToggle } from "../MenuToggle/LoginToggle";
+import { motion } from "motion/react";
+
 
 
 function Navbar() {
@@ -31,24 +35,33 @@ function Navbar() {
         </div>
 
         <div className="d-flex flex-row">
-          <div id="navbar-burger" onClick={handleShowMenu}>
-            <img src='../../media/icon/list.svg' alt="icone menu" className="header-icons" id="iconMenu"/>
-          </div>
-          <div id="navbar-login" onClick={handleShowLogin}>
-            <svg xmlns="http://www.w3.org/2000/svg" fill="#492E34" className="bi bi-person-fill header-icons" viewBox="0 0 16 16">
-              <path d="M3 14s-1 0-1-1 1-4 6-4 6 3 6 4-1 1-1 1zm5-6a3 3 0 1 0 0-6 3 3 0 0 0 0 6"/>
-            </svg>
-          </div>
+          <MenuToggle toggle={handleShowMenu} isOpen={showMenu} /> 
+          <LoginToggle toggle={handleShowLogin} isOpen={showLogin} />
+
         </div>
         
       </div>
 
       <div className={`navbar-login ${showLogin ? "show-login" : "hide"}`}>
         
-        <div className="d-flex flex-column flex-md-row justify-content-center">
+        <div className="d-flex flex-column flex-md-row justify-content-center align-items-center">
           <div className="visuelMenu">
-            <img src='../../media/doodle/happyfleur2.png' alt="mascotte Nation Sound" className="mascotteMenu"/>
-            <img src='../../media/doodle/paysage1.png' alt="paysage" className="bgMascotteMenu"/>
+            <motion.img 
+              initial={{ opacity: 0, scale: 0 }} 
+              whileInView={{ opacity: 1, scale: 1 }} 
+              transition={{duration: 1.4 , scale: { type: "spring", visualDuration: 1 , bounce: 1 }}}
+              src='../../media/doodle/happyfleur2.png' 
+              alt="mascotte Nation Sound" 
+              className="mascotteMenu"
+            />
+            <motion.img 
+              initial={{ opacity: 0, scale: 0 }} 
+              whileInView={{ opacity: 1, scale: 1 }}
+              transition={{duration: 0.9, scale: { type: "spring", visualDuration: 0.4}}} 
+              src='../../media/doodle/paysage1.png' 
+              alt="paysage" 
+              className="bgMascotteMenu"
+            />
           </div>
           
           <div className="d-flex flex-column justify-content-center align-items-center">

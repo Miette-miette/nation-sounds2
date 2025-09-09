@@ -34,11 +34,6 @@
     height: 270px;
 }
 
-.pass1:hover, .pass2:hover, .pass3:hover {
-    transform: scale(110%);
-    transition: transform 0.3s ease;
-}
-
 .pass3>h3{
     font-family: "Caprasimo", serif;
     font-size: 30px;

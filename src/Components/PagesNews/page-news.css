@@ -1,7 +1,7 @@
 .article-text>div>img{
-    border-radius: 8%;
     object-fit: cover;
-    height: 200px;
+    height: 400px;
+    width: 100%;
 }
 
 .article-text>h1{

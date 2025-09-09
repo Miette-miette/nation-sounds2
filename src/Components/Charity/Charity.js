@@ -1,4 +1,5 @@
 import './charity.css';
+import { motion } from "motion/react";
 
 function charity(){
     return(
@@ -11,7 +12,12 @@ function charity(){
 
 
         <div id="assoTxt" className="d-flex flex-column flex-lg-row align-items-center">
-            <img src="../../media/photo/pexels-rdne-6646917.jpg"/>
+            <motion.img 
+                initial={{ opacity: 0, scale: 0 }} 
+                whileInView={{ opacity: 1, scale: 1 }} 
+                transition={{duration: 0.4 , scale: { type: "spring", visualDuration: 0.5 , bounce: 0.5 }}}
+                src="../../media/photo/pexels-rdne-6646917.jpg"
+            />
             <div>
                 <p><strong>National Sounds se veut être un festival inclusif et se distingue par son engagement humanitaire, visant à rassembler des personnes de diverses origines et à promouvoir 
                 la solidarité globale.</strong></p>
