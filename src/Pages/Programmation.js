@@ -16,7 +16,7 @@ const Programmation = () =>{
         "Euphorie":"../../media/scene/euphorie.png",
         "Fusion":"../../media/scene/fusion.png",
         "Rêverie":"../../media/scene/reverie.png",
-        "Patio":"../../media/scene/le patio.png",
+        "Le Patio":"../../media/scene/le_patio.png",
         "Prisme":"../../media/scene/prisme.png",
         "Résonance":"../../media/scene/resonance.png",
     }
@@ -173,7 +173,7 @@ const Programmation = () =>{
                         <option value="Tous">Tous</option>
                         <option value="concert">Concert</option>
                         <option value="performance">Performance</option>
-                        <option value="atelier">Atelier</option>
+                        <option value="workshop">Atelier</option>
                         </select>
                     </div>
                 </div>
@@ -191,9 +191,12 @@ const Programmation = () =>{
                 const sceneName = prog.location.name || "";
                 const sceneIcon = iconScene[sceneName] || "";
                 return (
-                <Link to={`/artiste/${prog.artist.id}`} key={prog.id} className="progItem d-flex flex-column" style={{backgroundImage: `url(${apiURL}${prog.artist.imgUrl})`}}>
+                <Link to={`/artiste/${prog.artist.id}`} 
+                    key={prog.id} 
+                    className="progItem d-flex flex-column" 
+                    style={{backgroundImage: `url(${apiURL}${prog.artist.imgUrl})`}}>
                         <div className="conteneurImg d-flex flex-row justify-content-end align-items-start">
-                            <img className="iconScene d-flex justify-content-end align-items-end" src={sceneIcon} alt="icon scène"/>
+                            <img className="iconScene d-flex justify-content-end align-items-end" src={sceneIcon} alt="icon scene"/>
                         </div>
 
                         <div className="progTxt">
@@ -206,7 +209,6 @@ const Programmation = () =>{
                             </p>
                             <p className="heure">{formatTime(prog.begin_time)}</p>
                         </div>
-                    
                 </Link>
                 );
             })}

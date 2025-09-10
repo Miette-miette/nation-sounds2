@@ -62,8 +62,10 @@ const Carte = () =>{
                                     <LayerGroup>
                                         {
                                             marker.map((all) =>  
-                                                <Marker key={all.id} position={[all.lat,all.lng]} icon={createIcon(`${apiURL}${all.imgUrl}`)}  eventHandlers={{click: () => setSelectedMarker(all)}}>
-                                            
+                                                <Marker key={all.id} 
+                                                    position={[all.lat,all.lng]} 
+                                                    icon={createIcon(`${apiURL}${all.imgUrl}`)}  
+                                                    eventHandlers={{click: () => setSelectedMarker(all)}}>
                                                 </Marker>
                                         )}
                                     </LayerGroup>   
@@ -82,7 +84,6 @@ const Carte = () =>{
                                         }
                                     </LayerGroup>
                                 </LayersControl.Overlay>
-
                                 <LayersControl.Overlay name="Point d'informations">
                                     <LayerGroup>
                                         {  
@@ -96,7 +97,6 @@ const Carte = () =>{
                                         }
                                     </LayerGroup>
                                 </LayersControl.Overlay>
-
                                 <LayersControl.Overlay name="Restauration">
                                     <LayerGroup>
                                         {  
@@ -110,7 +110,6 @@ const Carte = () =>{
                                         }
                                     </LayerGroup>
                                 </LayersControl.Overlay>
-
                                 <LayersControl.Overlay name="WC">
                                     <LayerGroup>
                                         {  

@@ -79,8 +79,8 @@ const LineUp = () => {
                         <div key={id} className={`carousel-item ${id === 0 ? "active" : ""}`}>
                             <div className="d-flex flex-row justify-content-center">
                                 {group.map((concertItem, index) => (
-                                    <motion.Link 
-                                        to={`/artiste/${concertItem.artist.id}`} 
+                                    <motion.a 
+                                        href={`/artiste/${concertItem.artist.id}`} 
                                         key={concertItem.id} 
                                         className="col-12 col-md-4 d-flex"
                                         initial={{ opacity: 0, scale: 0.5 }}
@@ -93,7 +93,7 @@ const LineUp = () => {
                                                 <p>{formatDate(concertItem.date)}</p>
                                             </div>
                                         </div>
-                                    </motion.Link>
+                                    </motion.a>
                                 ))}
                             </div>
                         </div>
