@@ -48,7 +48,7 @@ const PageArtist = () => {
                     <p>{artist.biography}</p>
                 </div>
             </section>
-            <section className="cta-prog d-flex flex-row justify-content-center">
+            <section className="cta-prog d-flex flex-column flex-md-row justify-content-center">
                 <Link to="/programmation" className="button-style d-flex flex-row justify-content-center">
                     <img src="../media/doodle/cassette.png" width="30px" alt="cassette"/>
                     Découvrir la programmation
