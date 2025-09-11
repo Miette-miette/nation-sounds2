@@ -50,11 +50,11 @@ const PageArtist = () => {
             </section>
             <section className="cta-prog d-flex flex-row justify-content-center">
                 <Link to="/programmation" className="button-style d-flex flex-row justify-content-center">
-                    <img src="../media/doodle/cassette.png" alt="cassette"/>
+                    <img src="../media/doodle/cassette.png" width="30px" alt="cassette"/>
                     Découvrir la programmation
                 </Link>
                 <Link to='https://www.ticketmaster.fr/fr' className="button-style d-flex flex-row justify-content-center" target="_blank" rel="noreferrer">
-                    <img src="../media/doodle/happyfleur2" alt="fleur"/>
+                    <img src="../media/doodle/happyfleur2.png" alt="fleur" width="30px"/>
                     Réserver mes billets
                 </Link>
             </section>
