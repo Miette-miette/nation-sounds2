@@ -33,18 +33,6 @@ const Carte = () =>{
     useEffect(() => {
         axios.get(baseURL + endpointMapSettings).then((res)=>setCarte(res.data));
         axios.get(baseURL + endpointMarker).then((res)=>setMarker(res.data));
-        axios.get(baseURL + endpointMarker).then((res) => {
-            const markersWithEventNow = res.data.map(marker => {
-                if (marker.type === "scène" && marker.begin_time && marker.end_time) {
-                    return {
-                        ...marker,
-                        eventNow: isEventNow(marker.begin_time, marker.end_time)
-                    };
-                }
-                return { ...marker, eventNow: false };
-            });
-            setMarker(markersWithEventNow);
-        });
     },[])
     
     return(
@@ -87,17 +75,17 @@ const Carte = () =>{
                                 <LayersControl.Overlay name="Événements en cours">
                                     <LayerGroup>
                                         {marker.map((marker) => {
-                                        if (marker.type === "scène" && marker.eventNow) {
-                                            return (
-                                            <Marker
-                                                key={marker.id}
-                                                position={[marker.lat, marker.lng]}
-                                                icon={createIcon(`${apiURL}${marker.imgUrl}`)}
-                                                eventHandlers={{ click: () => setSelectedMarker(marker) }}
-                                            />
-                                            );
-                                        }
-                                        return null;
+                                            if (marker.type === "scène" && marker.eventNow) {
+                                                return (
+                                                <Marker
+                                                    key={marker.id}
+                                                    position={[marker.lat, marker.lng]}
+                                                    icon={createIcon(`${apiURL}${marker.imgUrl}`)}
+                                                    eventHandlers={{ click: () => setSelectedMarker(marker) }}
+                                                />
+                                                );
+                                            }
+                                            return null;
                                         })}
                                     </LayerGroup>
                                 </LayersControl.Overlay>

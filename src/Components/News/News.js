@@ -17,7 +17,7 @@ const News = () => {
     },[])
    
     return (
-        <section id="news">
+        <section id="news" className="p-2">
             <div className="d-flex flex-row justify-content-center align-items-center" >
                 <img src="../../media/doodle/happyfleur2.png" className="decoTitre" alt='décoration de texte'/>
                 <h2>Actualités du festival</h2>
