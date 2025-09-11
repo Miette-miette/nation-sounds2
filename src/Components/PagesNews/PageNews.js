@@ -27,7 +27,7 @@ const PageNews = () => {
 
             <BackButton/>
            
-            <section className="d-flex flex-column justify-content-center wrapper-beige artist-info m-5">
+            <section className="d-flex flex-column justify-content-center align-items-center wrapper-beige artist-info m-5">
                 <div className="article-img d-flex flex-column justify-content-center">
                     <img src={`https://api.nsfestival2024.online${news.imgUrl}`} alt={news.title} height="200"/>  
                 </div> 
@@ -38,8 +38,14 @@ const PageNews = () => {
                 </div>
             </section>
             <section className="cta-prog d-flex flex-row justify-content-center">
-                <Link to="/programmation" className="button-style">Découvrir la programmation</Link>
-                <Link to='https://www.ticketmaster.fr/fr' className="button-style" target="_blank" rel="noreferrer">Reserver mes billets</Link>
+                <Link to="/programmation" className="button-style d-flex flex-row justify-content-center">
+                    <img src="../media/doodle/cassette.png" alt="cassette"/>
+                    Découvrir la programmation
+                </Link>
+                <Link to='https://www.ticketmaster.fr/fr' className="button-style d-flex flex-row justify-content-center" target="_blank" rel="noreferrer">
+                    <img src="../media/doodle/happyfleur2" alt="fleur"/>
+                    Réserver mes billets
+                </Link>
             </section>
         </main>
         

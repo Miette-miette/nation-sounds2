@@ -28,7 +28,7 @@ const PageArtist = () => {
             <BackButton/>
 
             <section className="d-flex flex-column-reverse flex-md-row justify-content-center align-items-center wrapper-beige artist-info">
-                <div className="artist-button d-flex flex-column ">
+                <div className="artist-button d-flex flex-column justify-content-center align-items-center">
                     <img src={`https://api.nsfestival2024.online${artist.imgUrl}`} alt={artist.name} width="200" height="200"/>
                     <a href={artist.spotify_link} className="button-style mt-4">
                         <svg viewBox="0 0 20 20" version="1.1" xmlns="http://www.w3.org/2000/svg" fill="#ffffff" stroke="#ffffff" className="icon">
@@ -49,8 +49,14 @@ const PageArtist = () => {
                 </div>
             </section>
             <section className="cta-prog d-flex flex-row justify-content-center">
-                <Link to="/programmation" className="button-style">Découvrir la programmation</Link>
-                <Link to='https://www.ticketmaster.fr/fr' className="button-style" target="_blank" rel="noreferrer">Reserver mes billets</Link>
+                <Link to="/programmation" className="button-style d-flex flex-row justify-content-center">
+                    <img src="../media/doodle/cassette.png" alt="cassette"/>
+                    Découvrir la programmation
+                </Link>
+                <Link to='https://www.ticketmaster.fr/fr' className="button-style d-flex flex-row justify-content-center" target="_blank" rel="noreferrer">
+                    <img src="../media/doodle/happyfleur2" alt="fleur"/>
+                    Réserver mes billets
+                </Link>
             </section>
         </main>
         

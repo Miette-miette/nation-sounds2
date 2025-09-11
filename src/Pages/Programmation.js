@@ -154,8 +154,8 @@ const Programmation = () =>{
                         <option value="Tous">Tous</option>
                         <option value="Euphorie">Scène Euphorie</option>
                         <option value="Fusion">Scène Fusion</option>
-                        <option value="Reverie">Scène Reverie</option>
-                        <option value="Resonance">Scène Resonance</option>
+                        <option value="Rêverie">Scène Rêverie</option>
+                        <option value="Résonance">Scène Résonance</option>
                         <option value="Prisme">Scène Prisme</option>
                         <option value="Le Patio">Le Patio</option>
                         </select>

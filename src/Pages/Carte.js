@@ -1,6 +1,6 @@
-import React, { useEffect, useState } from "react";
+import { useEffect, useState } from "react";
 import axios from "axios";
-import { MapContainer, Popup, TileLayer, useMapEvents, Marker, LayersControl, LayerGroup } from 'react-leaflet';
+import { MapContainer, TileLayer, Marker, LayersControl, LayerGroup } from 'react-leaflet';
 import L from 'leaflet';
 import 'leaflet/dist/leaflet.css';
 import LocationMarker from "../Components/GeoLocation/LocationMarker";
@@ -37,9 +37,9 @@ const Carte = () =>{
     return(
         <main>
             <div className="page-header d-flex flex-row justify-content-center align-items-center mt-5">
-                <img src="../../media/doodle/forme-organique1.png" className="decoTitre"/>
+                <img src="../../media/doodle/forme-organique1.png" className="decoTitre" alt='décoration de texte'/>
                 <h1>Carte du festival</h1>
-                <img src="../../media/doodle/forme-organique1.png" className="decoTitre"/>
+                <img src="../../media/doodle/forme-organique1.png" className="decoTitre" alt='décoration de texte'/>
             </div>
             
             <div id="conteneurCarte" className="d-flex flex-column flex-md-row ">
@@ -147,7 +147,7 @@ const Carte = () =>{
                                         <p>{selectedMarker.infoLocation.description}</p>
 
                                         {selectedMarker.type === "scène" && (
-                                        <p>{selectedMarker.eventNow ? "🎵 Un événement est en cours !" 
+                                        <p>{selectedMarker.eventNow ? "Un événement est en cours !" 
                                         : "Pas d’événement pour l’instant."}</p>)}
 
                                         {selectedMarker.type === "restauration" && (

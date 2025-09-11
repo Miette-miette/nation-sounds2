@@ -6,9 +6,9 @@ function Pass(){
     return(
         <section id='billeterie'>
             <div className="d-flex flex-row justify-content-center align-items-center">
-                <img src="../../media/doodle/metal.png" className="decoTitreShake"/>
+                <img src="../../media/doodle/metal.png" className="decoTitreShake" alt='décoration de texte'/>
                 <h2>Obtenez votre pass dès maintenant!</h2>
-                <img src="../../media/doodle/metal.png" className="decoTitreShake"/>
+                <img src="../../media/doodle/metal.png" className="decoTitreShake" alt='décoration de texte'/>
             </div>
 
             <div>

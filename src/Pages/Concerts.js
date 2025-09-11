@@ -6,8 +6,8 @@ import { formatTime } from "../utils/date";
 const scene = [
   { key: "Euphorie",  label: "EUPHORIE",  icon: "../../media/scene/euphorie.png" },
   { key: "Fusion",    label: "FUSION",    icon: "../../media/scene/fusion.png" },
-  { key: "Rêverie",   label: "REVERIE",   icon: "../../media/scene/reverie.png" },
-  { key: "Resonance", label: "RESONANCE", icon: "../../media/scene/resonance.png" },
+  { key: "Rêverie",   label: "RÊVERIE",   icon: "../../media/scene/reverie.png" },
+  { key: "Résonance", label: "RÉSONANCE", icon: "../../media/scene/resonance.png" },
   { key: "Prisme",    label: "PRISME",    icon: "../../media/scene/prisme.png" },
 ];
 

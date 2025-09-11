@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import { useEffect, useState } from "react";
 import axios from "axios";
 import { Link } from "react-router-dom";
 import './news.css';
@@ -19,9 +19,9 @@ const News = () => {
     return (
         <section id="news">
             <div className="d-flex flex-row justify-content-center align-items-center" >
-                <img src="../../media/doodle/happyfleur2.png" className="decoTitre"/>
+                <img src="../../media/doodle/happyfleur2.png" className="decoTitre" alt='décoration de texte'/>
                 <h2>Actualités du festival</h2>
-                <img src="../../media/doodle/happyfleur2.png" className="decoTitre"/>
+                <img src="../../media/doodle/happyfleur2.png" className="decoTitre" alt='décoration de texte'/>
             </div>
 
              <div id="carouselNews" className="carousel slide w-100" data-bs-ride="carousel">
@@ -42,7 +42,7 @@ const News = () => {
                                         whileInView={{ opacity: 1, scale: 1 }}
                                         transition={{duration: 0.8, delay: index * 0.2, ease: [0, 0.71, 0.2, 1.01]}}>
                                         <div className="articleImg">
-                                            <img src={`${apiURL}${article.imgUrl}`}/>
+                                            <img src={`${apiURL}${article.imgUrl}`} alt={article.title}/>
                                         </div>
                                         <div className="articleDescription">
                                             <h3 className="title">{article.title}</h3>

@@ -1,5 +1,4 @@
 import React, { useEffect, useState } from "react";
-import { Link } from "react-router-dom";
 import axios from "axios";
 import { formatDate } from "../../utils/date";
 import './lineup.css';
@@ -18,7 +17,7 @@ const LineUp = () => {
                 if (res.data && res.data.length > 0) {
                     setConcert(res.data);
                 } else {
-                    // fallback: données tests si API vide
+                    // données tests si API vide
                     setConcert([
                         {
                             id: 1,
