@@ -3,7 +3,7 @@ const MentionsLegales = () => {
     return(
         <main className="page-header">
             <h1>Mentions Légales</h1>
-            <p>Dernière mise à jour : 16/01/25</p>
+            <p>Dernière mise à jour : 11/09/25</p>
 
             <h2>Éditeur du site :</h2>
             <p>Le site Nation Sounds 2024 (projet fictif) est édité par :</p>
@@ -18,11 +18,10 @@ const MentionsLegales = () => {
             <h2>Hébergeur du site :</h2>
             <p>Le site est hébergé par :
 
-            <strong>Nom :</strong> [Nom de l’hébergeur]
-            <strong>Adresse :</strong>  [Adresse de l’hébergeur]
-            <strong>Téléphone :</strong> [Numéro de l’hébergeur]</p>
+            <strong>Nom :</strong> Ionos
+            <strong>Adresse :</strong>  7 PLACE DE LA GARE 57200 SARREGUEMINES</p>
 
-            <h2>Responsable de la publication :</h2>
+            <h2>Responsable de la publication :Miette</h2>
             <p> Responsable de la publication: Miette</p>
 
             <h2>Propriété intellectuelle :</h2>

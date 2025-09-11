@@ -11,7 +11,7 @@ const Path = (props) => (
 
 export const MenuToggle = ({ toggle, isOpen }) => (
   <button className="d-flex align-items-center justify-content-center" onClick={toggle} style={{ background: "none", border: "none", cursor: "pointer" }}>
-    <svg width="50" height="50" viewBox="0 0 23 23">
+    <svg width="48" height="48" viewBox="0 0 23 23">
       <Path
         variants={{
           closed: { d: "M 2 2.5 L 20 2.5", stroke: "#492E34" }, 

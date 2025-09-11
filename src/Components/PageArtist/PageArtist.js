@@ -27,7 +27,7 @@ const PageArtist = () => {
 
             <BackButton/>
 
-            <section className="d-flex flex-column-reverse flex-md-row justify-content-center wrapper-beige artist-info">
+            <section className="d-flex flex-column-reverse flex-md-row justify-content-center align-items-center wrapper-beige artist-info">
                 <div className="artist-button d-flex flex-column ">
                     <img src={`https://api.nsfestival2024.online${artist.imgUrl}`} alt={artist.name} width="200" height="200"/>
                     <a href={artist.spotify_link} className="button-style mt-4">
